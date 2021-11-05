@@ -1,0 +1,2 @@
+receipt id, Customer Name, Staff Name, check In, check Out, Money
+1,2,2,2, 2,1.0

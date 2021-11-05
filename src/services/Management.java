@@ -1,4 +1,6 @@
-public interface GeneralService<T> {
+package services;
+
+public interface Management<T> {
     void add(T t);
 
     void edit(int id, T t);

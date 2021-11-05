@@ -6,11 +6,11 @@ public class Receipt {
     private int receiptId;
     private String customerName;
     private String staffName;
-    private Date checkIn;
-    private Date checkOut;
+    private String checkIn;
+    private String checkOut;
     private double receiptPrice;
 
-    public Receipt(int receiptId, String customerName, String staffName, Date checkIn, Date checkOut, double receiptPrice) {
+    public Receipt(int receiptId, String customerName, String staffName, String checkIn, String checkOut, double receiptPrice) {
         this.receiptId = receiptId;
         this.customerName = customerName;
         this.staffName = staffName;
@@ -46,19 +46,19 @@ public class Receipt {
         this.staffName = staffName;
     }
 
-    public Date getCheckIn() {
+    public String getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(Date checkIn) {
+    public void setCheckIn(String checkIn) {
         this.checkIn = checkIn;
     }
 
-    public Date getCheckOut() {
+    public String getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(Date checkOut) {
+    public void setCheckOut(String checkOut) {
         this.checkOut = checkOut;
     }
 

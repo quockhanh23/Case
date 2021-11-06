@@ -2,10 +2,11 @@ package services;
 
 import models.Admin;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminManagement implements Management<Admin> {
+public class AdminManagement implements Management<Admin> , Serializable {
     private List<Admin> adminList = new ArrayList<>();
 
     public AdminManagement(List<Admin> adminList) {
@@ -50,6 +51,5 @@ public class AdminManagement implements Management<Admin> {
         for (int i = 0; i < adminList.size(); i++) {
             System.out.println(adminList.get(i));
         }
-
     }
 }

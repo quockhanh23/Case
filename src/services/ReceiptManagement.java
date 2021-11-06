@@ -3,12 +3,13 @@ package services;
 import models.Receipt;
 import models.Room;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReceiptManagement implements Management<Receipt> {
+public class ReceiptManagement implements Management<Receipt>, Serializable {
     List<Receipt> receiptList = new ArrayList<>();
 
     public ReceiptManagement(List<Receipt> receiptList) {
@@ -25,16 +26,11 @@ public class ReceiptManagement implements Management<Receipt> {
 
     public void setReceiptList(List<Receipt> receiptList) {
         this.receiptList = receiptList;
-    }
-
-    ;
-
+    };
 
     @Override
     public void add(Receipt receipt) {
         receiptList.add(receipt);
-
-
     }
 
     @Override
@@ -71,20 +67,26 @@ public class ReceiptManagement implements Management<Receipt> {
 
     public Receipt creat() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter customer name: ");
         String customerName = scanner.nextLine();
+        System.out.println("Enter staff name: ");
         String staffName = scanner.nextLine();
+        System.out.println("Enter first day: ");
         String checkIn = scanner.nextLine();
+        System.out.println("Enter last day: ");
         String checkOut = scanner.nextLine();
+        System.out.println("Enter receipt Id: ");
         int receiptId = scanner.nextInt();
+        System.out.println("Enter total bill: ");
         double receiptPrice = scanner.nextDouble();
         return new Receipt(receiptId, staffName, checkIn, checkOut, customerName, receiptPrice);
     }
 
-    public void getMonthTotalMoney() {
+    public void getTotalMoney() {
         int sum = 0;
         for (int i = 0; i < receiptList.size(); i++) {
-            sum++;
+            sum += receiptList.get(i).getReceiptPrice();
         }
-        System.out.println(sum);
+        System.out.println(sum + " USD");
     }
 }

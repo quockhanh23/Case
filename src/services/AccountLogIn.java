@@ -1,17 +1,18 @@
-package models;
+package services;
 
 import java.util.Objects;
 import java.util.TreeMap;
 
-public class Account {
+public class AccountLogIn {
     private TreeMap<String, String> accountMap = new TreeMap<>();
 
-    public Account(TreeMap<String, String> accountMap) {
+    public AccountLogIn(TreeMap<String, String> accountMap) {
         this.accountMap = accountMap;
     }
 
-    public Account() {
+    public AccountLogIn() {
         accountMap = new TreeMap<>();
+        accountMap.put("khanh", "123");
 
     }
 
@@ -23,13 +24,14 @@ public class Account {
         this.accountMap = accountMap;
     }
 
-    public void register(String name, String password) {
+    public boolean register(String name, String password) {
         boolean check = accountMap.containsKey(name);
         if (!check) {
             accountMap.put(name, password);
             System.out.println("Successful registration. ");
+            return true;
         } else {
-            System.out.println("Name already exists. ");
+            return false;
         }
     }
 
@@ -38,6 +40,7 @@ public class Account {
             System.out.println("Successful login.");
             return true;
         }
+
         return false;
     }
 }

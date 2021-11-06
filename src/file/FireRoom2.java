@@ -1,6 +1,7 @@
-package services;
+package file;
 
 import models.Room;
+import services.RoomManagement;
 
 import java.io.*;
 import java.util.List;
@@ -9,7 +10,7 @@ public class FireRoom2 {
     public static void write(String path, List<Room> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String str = " ID room , Price, status, Number bed, Number toilet";
+        String str = " Id room , Price, Status, Number bed, Number toilet";
         for (Room room : list) {
             str += "\n";
             str += room.getRoomId() + ",";

@@ -2,11 +2,12 @@ package services;
 
 import models.Room;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class RoomManagement implements Management<Room> {
+public class RoomManagement implements Management<Room>, Serializable {
     private List<Room> roomList = new ArrayList<>();
 
     public RoomManagement(List<Room> roomList) {

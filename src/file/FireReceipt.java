@@ -1,7 +1,8 @@
-package services;
+package file;
 
 import models.Receipt;
 import models.Room;
+import services.ReceiptManagement;
 
 import java.io.*;
 import java.util.List;
@@ -10,7 +11,7 @@ public class FireReceipt {
     public static void write2(String path, List<Receipt> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String str = "receipt id, Customer Name, Staff Name, check In, check Out, Money";
+        String str = "Receipt id, Customer Name, Staff Name, Check in day, Check out day, Total money";
         for (Receipt receipt : list) {
             str += "\n";
             str += receipt.getReceiptId() + ",";

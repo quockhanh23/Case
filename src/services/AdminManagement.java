@@ -46,6 +46,15 @@ public class AdminManagement implements Management<Admin>, Serializable {
         return 0;
     }
 
+    public boolean findUserAndPass(String name, String pass) {
+        for (int i = 0; i < adminList.size(); i++) {
+            if (adminList.get(i).getUseName().equals(name) && adminList.get(i).getPassWord().equals(pass)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public void printList() {
         System.out.println(String.format("%-12s%-12s%-8s%-18s%-5s",
@@ -54,12 +63,5 @@ public class AdminManagement implements Management<Admin>, Serializable {
             System.out.println(admin);
 
         }
-    }
-
-    @Override
-    public String toString() {
-        return "AdminManagement{" +
-                "adminList=" + adminList +
-                '}';
     }
 }

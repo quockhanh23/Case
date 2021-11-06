@@ -1,24 +1,26 @@
 package services;
 
-public class Titles {
-    public static void title1() {
+public class TitlesManagement {
+    public static void titleLogin() {
         System.out.println("___________________________________");
         System.out.println("Wellcome to The Continental hotel!. ");
         System.out.println("Select number 1, if your already have an account: ");
         System.out.println("Select number 2, if your don't have account: ");
-        System.out.println("1. Login. ");
+        System.out.println("1. Login --> (khanh - 123). ");
         System.out.println("2. Register. ");
         System.out.println("0. End program. ");
     }
 
-    public static void title2() {
+    public static void titleSelectManagement() {
+        System.out.println("___________________________________");
         System.out.println("Wellcome to The Continental hotel!. ");
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
         System.out.println("Select number: ");
         System.out.println("1. Admin manager. ");
         System.out.println("2. Room manager. ");
         System.out.println("3. Receipt manager. ");
-        System.out.println("0. Exit. ");
+        System.out.println("4. Back to login. ");
+        System.out.println("0. End program. ");
     }
 
     public static void titleRoom() {
@@ -42,7 +44,7 @@ public class Titles {
         System.out.println("___________________________________");
         System.out.println("Wellcome to The Continental hotel!. ");
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
-        System.out.println("Select number: ");
+        System.out.println("Select numbers: ");
         System.out.println("1. Print the list receipt. ");
         System.out.println("2. Add receipt. ");
         System.out.println("3. Edit receipt. ");
@@ -60,6 +62,21 @@ public class Titles {
         System.out.println("Select number: ");
         System.out.println("1. Print the list admin. ");
         System.out.println("2. Add admin. ");
-        System.out.println("3. Edit admin. ");
+        System.out.println("3. Back to main menu. ");
+        System.out.println("0. End program. ");
+    }
+
+    public static void titleTryCatch() {
+        System.err.println("Wrong input!. ");
+        System.out.println("___________________________________");
+    }
+
+    public static void titleDefault() {
+        System.out.println("This option is not available. ");
+        System.out.println("___________________________________");
+    }
+
+    public static void wellCome() {
+        System.out.println("Wellcome to The Continental hotel!. ");
     }
 }

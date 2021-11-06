@@ -1,7 +1,7 @@
 import models.Receipt;
 import file.FireReceipt;
 import services.ReceiptManagement;
-import services.Titles;
+import services.TitlesManagement;
 
 import java.util.Scanner;
 
@@ -15,11 +15,11 @@ public class MainReceipt {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                Titles.titleReceipt();
+                TitlesManagement.titleReceipt();
                 choice = scanner.nextInt();
 
             } catch (Exception e) {
-                System.out.println("Wrong input!. ");
+                TitlesManagement.titleTryCatch();
             }
             switch (choice) {
                 case 1:
@@ -65,14 +65,14 @@ public class MainReceipt {
                     receiptManagement.getTotalMoney();
                     break;
                 case 7:
-                    BigMain.showMenu();
+                    MenuMain.showMenu();
                     break;
                 case 0:
+                    System.out.println("You just chose number: " + choice + " --> Ending!...");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("This option is not available. ");
-                    System.out.println("___________________________________");
+                    TitlesManagement.titleDefault();
                     break;
             }
         }

@@ -2,7 +2,7 @@ import models.Room;
 
 import file.FireRoom2;
 import services.RoomManagement;
-import services.Titles;
+import services.TitlesManagement;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,58 +24,45 @@ public class MainRoom {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                Titles.titleRoom();
+                TitlesManagement.titleRoom();
                 choice = scanner.nextInt();
             } catch (Exception e) {
-                System.out.println("Wrong input!. ");
+                TitlesManagement.titleTryCatch();
             }
             switch (choice) {
-                case 1:
-                    roomManagement.printList();
-                    break;
-                case 2:
-                    roomManagement.add(roomManagement.creat());
-                    break;
-                case 3:
+                case 1 -> roomManagement.printList();
+                case 2 -> roomManagement.add(roomManagement.creat());
+                case 3 -> {
                     System.out.println("Enter id want change: ");
                     int edit = scanner.nextInt();
                     roomManagement.edit(edit, roomManagement.creat());
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     System.out.println("Choice: ");
                     System.out.println("Status = 1: Clear room. ");
                     System.out.println("Status = 2: Ready room. ");
                     System.out.println("Status = 3: Fixing room. ");
                     int status = scanner.nextInt();
                     roomManagement.checkRoomByStatus(status);
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     System.out.println("Enter id to find: ");
                     int find = scanner.nextInt();
                     roomManagement.findById2(find);
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     System.out.println("Enter price to find: ");
                     int price = scanner.nextInt();
                     roomManagement.findRoomByPrice(price);
-                    break;
-                case 7:
-                    FireRoom2.write("demo2.csv", roomManagement.getRoomList());
-                    break;
-                case 8:
-                    FireRoom2.read("demo2.csv");
-                    break;
-                case 9:
-                    BigMain.showMenu();
-                    break;
-                case 0:
+                }
+                case 7 -> FireRoom2.write("demo2.csv", roomManagement.getRoomList());
+                case 8 -> FireRoom2.read("demo2.csv");
+                case 9 -> MenuMain.showMenu();
+                case 0 -> {
                     System.out.println("You just chose number: " + choice + " --> Ending!...");
                     System.exit(0);
-                    break;
-                default:
-                    System.out.println("This option is not available. ");
-                    System.out.println("___________________________________");
-                    break;
+                }
+                default -> TitlesManagement.titleDefault();
             }
         }
     }

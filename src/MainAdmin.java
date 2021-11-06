@@ -18,9 +18,10 @@ public class MainAdmin {
         String pass = scanner.nextLine();
         boolean check = adminManagement.findUserAndPass(user, pass);
         if (check) {
+            System.out.println("Successful login.");
             MenuMain.showMenu();
         } else {
-            System.out.println("Wrong username and password!. ");
+            System.out.println("Wrong username or password!. ");
             System.out.println("Please log in again: ");
         }
     }

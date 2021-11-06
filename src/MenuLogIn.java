@@ -9,8 +9,8 @@ public class MenuLogIn {
             try {
                 int choice = -1;
                 Scanner scanner = new Scanner(System.in);
+                IntrosManagement.intro1();
                 IntrosManagement.intro2();
-                IntrosManagement.intro3();
                 TitlesManagement.titleLogin();
                 choice = scanner.nextInt();
                 switch (choice) {

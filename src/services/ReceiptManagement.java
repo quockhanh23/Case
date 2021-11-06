@@ -61,8 +61,8 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
 
     @Override
     public void printList() {
-        System.out.println(String.format("%-15s%-25s%-25s%-10s%-10s%-5s",
-                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In", "Day Out", "Total Money:"));
+        System.out.println(String.format("%-15s%-25s%-25s%-20s%-20s%-5s",
+                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In/month", "Day Out/month", "Total Money:"));
         for (Receipt receipt : receiptList) {
             System.out.println(receipt);
         }

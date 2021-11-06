@@ -2,6 +2,7 @@ import models.Room;
 
 import file.FireRoom2;
 import services.RoomManagement;
+import services.Titles;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -12,9 +13,9 @@ public class MainRoom {
         roomManagement.add(new Room(1, 100, 1, 1, 1));
         roomManagement.add(new Room(2, 100, 1, 1, 1));
         roomManagement.add(new Room(3, 100, 1, 1, 1));
-        roomManagement.add(new Room(4, 100, 2, 2, 2));
-        roomManagement.add(new Room(5, 100, 2, 2, 2));
-        roomManagement.add(new Room(6, 200, 2, 2, 2));
+        roomManagement.add(new Room(4, 200, 2, 2, 2));
+        roomManagement.add(new Room(5, 200, 3, 2, 2));
+        roomManagement.add(new Room(6, 200, 3, 2, 2));
         roomManagement.add(new Room(7, 200, 2, 2, 2));
         roomManagement.add(new Room(8, 200, 2, 2, 2));
         roomManagement.add(new Room(9, 500, 1, 10, 10));
@@ -23,18 +24,7 @@ public class MainRoom {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                System.out.println("Wellcome to The Continental hotel!. ");
-                System.out.println("Select number: ");
-                System.out.println("1. Print list rooms. ");
-                System.out.println("2. Add room. ");
-                System.out.println("3. Edit room. ");
-                System.out.println("4. Find the room by id room. ");
-                System.out.println("5. Find the room by price. ");
-                System.out.println("6. Check room. ");
-                System.out.println("7. write file. ");
-                System.out.println("8. Print file. ");
-                System.out.println("9. Back to main menu. ");
-                System.out.println("0. End program. ");
+                Titles.titleRoom();
                 choice = scanner.nextInt();
             } catch (Exception e) {
                 System.out.println("Wrong input!. ");
@@ -47,24 +37,27 @@ public class MainRoom {
                     roomManagement.add(roomManagement.creat());
                     break;
                 case 3:
+                    System.out.println("Enter id want change: ");
                     int edit = scanner.nextInt();
-                    boolean check = (roomManagement.findIndexById(edit)) < roomManagement.size() &&
-                            roomManagement.findIndexById(edit) > -1;
-                    if (check) {
-                        roomManagement.edit(edit, roomManagement.creat());
-                    }
+                    roomManagement.edit(edit, roomManagement.creat());
                     break;
                 case 4:
-                    int find = scanner.nextInt();
-                    System.out.println(roomManagement.findIndexById(find));
+                    System.out.println("Choice: ");
+                    System.out.println("Status = 1: Clear room. ");
+                    System.out.println("Status = 2: Ready room. ");
+                    System.out.println("Status = 3: Fixing room. ");
+                    int status = scanner.nextInt();
+                    roomManagement.checkRoomByStatus(status);
                     break;
                 case 5:
-                    int price = scanner.nextInt();
-                    roomManagement.findRoomByPrice(price);
+                    System.out.println("Enter id to find: ");
+                    int find = scanner.nextInt();
+                    roomManagement.findById2(find);
                     break;
                 case 6:
-                    int status = scanner.nextInt();
-                    roomManagement.printRoomByStatus(status);
+                    System.out.println("Enter price to find: ");
+                    int price = scanner.nextInt();
+                    roomManagement.findRoomByPrice(price);
                     break;
                 case 7:
                     FireRoom2.write("demo2.csv", roomManagement.getRoomList());
@@ -75,14 +68,13 @@ public class MainRoom {
                 case 9:
                     BigMain.showMenu();
                     break;
-
                 case 0:
                     System.out.println("You just chose number: " + choice + " --> Ending!...");
                     System.exit(0);
                     break;
                 default:
                     System.out.println("This option is not available. ");
-                    System.out.println("_________________________________");
+                    System.out.println("___________________________________");
                     break;
             }
         }

@@ -26,7 +26,9 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
 
     public void setReceiptList(List<Receipt> receiptList) {
         this.receiptList = receiptList;
-    };
+    }
+
+    ;
 
     @Override
     public void add(Receipt receipt) {
@@ -59,6 +61,8 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
 
     @Override
     public void printList() {
+        System.out.println(String.format("%-15s%-25s%-25s%-10s%-10s%-5s",
+                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In", "Day Out", "Total Money:"));
         for (Receipt receipt : receiptList) {
             System.out.println(receipt);
         }
@@ -79,7 +83,7 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         int receiptId = scanner.nextInt();
         System.out.println("Enter total bill: ");
         double receiptPrice = scanner.nextDouble();
-        return new Receipt(receiptId, staffName, checkIn, checkOut, customerName, receiptPrice);
+        return new Receipt(receiptId, customerName, staffName, checkIn, checkOut, receiptPrice);
     }
 
     public void getTotalMoney() {
@@ -87,6 +91,6 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         for (int i = 0; i < receiptList.size(); i++) {
             sum += receiptList.get(i).getReceiptPrice();
         }
-        System.out.println(sum + " USD");
+        System.out.println("Total Money: " + sum + " USD");
     }
 }

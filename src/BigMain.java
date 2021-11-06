@@ -1,40 +1,33 @@
 import services.AccountLogIn;
+import services.Intros;
+import services.Titles;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BigMain {
     public static void main(String[] args) {
+        AccountLogIn accountLogIn = new AccountLogIn();
         while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
                 int choice = -1;
-
-                System.out.println("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
-                System.out.println("000000000000000000000  00000000000000000000000000000000000  000000000000000000000000000000000000000000000000000000000");
-                System.out.println("0000000000000000                                              0000000000000  0000000000000000000000000000000000000000");
-                System.out.println("0000000000000000                                                 0000000   000000000000000000000000000000000000000000");
-                System.out.println("000000000000000000000000000000000000000                                 000000000000000000000000000000000000000000000");
-                System.out.println("000000000000000000000000000000000000000                                       000000000000000000000000000000000000000");
-                System.out.println("0000000000000000000000000000000000000000000000000000000000000000000                0000000000000000000000000000000000");
-                System.out.println("0000000000000000000000000000000000000000000000000000      @@     000                 00000000000000000000000000000000");
-                System.out.println("0000000000000000000000000000000000000000000000000000     @@      00000                 000000000000000000000000000000");
-                System.out.println("00000000000000000000000000000000000000000000000000000000000000000000000                 00000000000000000000000000000");
-                System.out.println("000000000000000000000000000000000000000000000000000000000000000000000000                 0000000000000000000000000000");
-                System.out.println("000000000000000000000000000000000000000000000000000000000000000000000000                  000000000000000000000000000");
-                System.out.println("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
-                System.out.println("___________________________________");
-                System.out.println("Wellcome to The Continental hotel!. ");
-                System.out.println("Select number 1, if your already have an account: ");
-                System.out.println("Select number 2, if your don't have account: ");
-                System.out.println("1. Login. ");
-                System.out.println("2. Register. ");
+                Intros.intro1();
+                Titles.title1();
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
                         accountLogIn();
                         break;
                     case 2:
+                        MainAdmin.creat();
+                        showMenu();
+                        break;
+                    case 3:
+                        String name = scanner.nextLine();
+                        accountLogIn.find(name);
+                        break;
+                    case 0:
+                        System.exit(0);
                         break;
                     default:
                         System.out.println("This option is not available. ");
@@ -45,7 +38,6 @@ public class BigMain {
                 System.err.println("Wrong input!. ");
                 System.err.println("Please choice 1 or 2. ");
                 System.out.println("___________________________________");
-
             }
         }
     }
@@ -75,16 +67,11 @@ public class BigMain {
         while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
-                System.out.println("Wellcome to The Continental hotel!. ");
-                System.out.println("My name is John Khánh Wick. Please follow me!. ");
-                System.out.println("Select number: ");
-                System.out.println("1. Admin manager. ");
-                System.out.println("2. Room manager. ");
-                System.out.println("3. Receipt manager. ");
-                System.out.println("0. Exit. ");
+                Titles.title2();
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
+                        MainAdmin.admin();
                         break;
                     case 2:
                         MainRoom.mainRoom();
@@ -93,6 +80,7 @@ public class BigMain {
                         MainReceipt.mainReceipt();
                         break;
                     case 0:
+                        System.out.println("You just chose number: " + choice + " --> Ending!...");
                         System.exit(0);
                         break;
                     default:
@@ -102,7 +90,6 @@ public class BigMain {
                 }
             } catch (Exception e) {
                 System.out.println("Wrong input!. ");
-
             }
         }
     }

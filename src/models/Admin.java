@@ -70,12 +70,6 @@ public class Admin {
 
     @Override
     public String toString() {
-        return "Admin{" +
-                "useName='" + useName + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                '}';
+        return String.format("%-12s%-12s%-8s%-18s%-5s", getUseName(), getName(), getAge(), getPhoneNumber(), getEmail());
     }
 }

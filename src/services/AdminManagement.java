@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminManagement implements Management<Admin> , Serializable {
+public class AdminManagement implements Management<Admin>, Serializable {
     private List<Admin> adminList = new ArrayList<>();
 
     public AdminManagement(List<Admin> adminList) {
@@ -48,8 +48,18 @@ public class AdminManagement implements Management<Admin> , Serializable {
 
     @Override
     public void printList() {
-        for (int i = 0; i < adminList.size(); i++) {
-            System.out.println(adminList.get(i));
+        System.out.println(String.format("%-12s%-12s%-8s%-18s%-5s",
+                "User name: ", "Name: ", "Age: ", "Phone numbers: ", "Email address: "));
+        for (Admin admin : adminList) {
+            System.out.println(admin);
+
         }
+    }
+
+    @Override
+    public String toString() {
+        return "AdminManagement{" +
+                "adminList=" + adminList +
+                '}';
     }
 }

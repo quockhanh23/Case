@@ -11,7 +11,7 @@ public class FireReceipt {
     public static void write2(String path, List<Receipt> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String str = "Receipt id, Customer Name, Staff Name, Check in day, Check out day, Total money";
+        String str = "Receipt id,Customer Name,Staff Name,Check in day,Check out day,Total money (USD)";
         for (Receipt receipt : list) {
             str += "\n";
             str += receipt.getReceiptId() + ",";

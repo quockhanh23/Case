@@ -59,43 +59,48 @@ public class RoomManagement implements Management<Room>, Serializable {
 
     @Override
     public void printList() {
+        System.out.println(String.format("%-12s%-10s%-12s%-12s%-5s",
+                "Room Id:", "Price:", "Status:", "Bed Room:", "Toilet:"));
         for (Room room : roomList) {
             System.out.println(room);
         }
     }
 
-    public void findRoomByPrice(int price) {
+    public int findRoomByPrice(int price) {
         for (int i = 0; i < roomList.size(); i++) {
-            if (roomList.get(i).getRoomId() == price) {
-                System.out.println(roomList.get(i));
-            }
-        }
-    }
-
-    public int checkRoomByStatus(int status) {
-        for (int i = 0; i < roomList.size(); i++) {
-            if (roomList.get(i).getStatus() == status) {
+            if (roomList.get(i).getPrice() == price) {
                 return i;
             }
         }
         return -1;
     }
 
-    public void printRoomByStatus(int status) {
-        for (int i = 0; i < roomList.size(); i++) {
-            if (checkRoomByStatus(status) != -1) {
-                System.out.println(roomList.get(i).getStatus());
+    public void findById2(int id) {
+        int index = findIndexById(id);
+        if (index != -1) {
+            System.out.println(roomList.get(index));
+        }
+    }
 
+    public void checkRoomByStatus(int status) {
+        for (int i = 0; i < roomList.size(); i++) {
+            if (roomList.get(i).getStatus() == status) {
+                System.out.println(roomList.get(i));
             }
         }
     }
 
     public Room creat() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter new Id: ");
         int numberRoom = scanner.nextInt();
+        System.out.println("Enter price: ");
         int price = scanner.nextInt();
+        System.out.println("Enter status: ");
         int status = scanner.nextInt();
+        System.out.println("Enter bedrooms: ");
         int numberOfBedRoom = scanner.nextInt();
+        System.out.println("Enter toilets: ");
         int numberOfToiLet = scanner.nextInt();
         return new Room(numberRoom, price, status, numberOfBedRoom, numberOfToiLet);
 

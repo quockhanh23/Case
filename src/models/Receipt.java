@@ -73,13 +73,7 @@ public class Receipt implements Serializable {
 
     @Override
     public String toString() {
-        return "Receipt{" +
-                "receiptId=" + receiptId +
-                ", customerName='" + customerName + '\'' +
-                ", staffName='" + staffName + '\'' +
-                ", checkIn=" + checkIn +
-                ", checkOut=" + checkOut +
-                ", receiptPrice=" + receiptPrice +
-                '}';
+        return String.format("%-15s%-25s%-25s%-10s%-10s%-5s",
+                getReceiptId() ,getCustomerName(), getStaffName(), getCheckIn(), getCheckOut(), getReceiptPrice());
     }
 }

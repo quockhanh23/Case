@@ -66,12 +66,7 @@ public class Room implements Serializable {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "roomId=" + roomId +
-                ", price=" + price +
-                ", status=" + status +
-                ", NumberOfBedRoom=" + NumberOfBedRoom +
-                ", NumberOfToilet=" + NumberOfToilet +
-                '}';
+        return String.format("%-12s%-10s%-12s%-12s%-5s",
+                getRoomId(), getPrice(), getStatus(), getNumberOfBedRoom(), getNumberOfToilet());
     }
 }

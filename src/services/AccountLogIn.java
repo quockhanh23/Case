@@ -12,7 +12,10 @@ public class AccountLogIn {
 
     public AccountLogIn() {
         accountMap = new TreeMap<>();
-        accountMap.put("khanh", "123");
+        accountMap.put("khanh1", "123");
+        accountMap.put("khanh2", "123");
+        accountMap.put("khanh3", "123");
+        accountMap.put("khanh4", "123");
 
     }
 
@@ -40,7 +43,6 @@ public class AccountLogIn {
             System.out.println("Successful login.");
             return true;
         }
-
         return false;
     }
 }

@@ -1,12 +1,16 @@
 package models;
 
 public class Admin {
+    private String useName;
+    private String passWord;
     private String name;
     private int age;
     private int phoneNumber;
     private String email;
 
-    public Admin(String name, int age, int phoneNumber, String email) {
+    public Admin(String useName, String passWord, String name, int age, int phoneNumber, String email) {
+        this.useName = useName;
+        this.passWord = passWord;
         this.name = name;
         this.age = age;
         this.phoneNumber = phoneNumber;
@@ -14,6 +18,22 @@ public class Admin {
     }
 
     public Admin() {
+    }
+
+    public String getUseName() {
+        return useName;
+    }
+
+    public void setUseName(String useName) {
+        this.useName = useName;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
     public String getName() {
@@ -46,5 +66,16 @@ public class Admin {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "useName='" + useName + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

@@ -1,7 +1,7 @@
 import models.Receipt;
 import file.FireReceipt;
 import services.ReceiptManagement;
-import services.TitlesManagement;
+import services.Titles;
 
 import java.util.Scanner;
 
@@ -15,25 +15,25 @@ public class MainReceipt {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                TitlesManagement.titleReceipt();
+                Titles.titleReceipt();
                 choice = scanner.nextInt();
 
             } catch (Exception e) {
-                TitlesManagement.titleTryCatch();
+                Titles.titleTryCatch();
             }
             switch (choice) {
                 case 1:
                     receiptManagement.printList();
                     break;
                 case 2:
-                    receiptManagement.add(receiptManagement.creat());
-                    try {
-                        FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
-                        System.out.println("Receipt saved. ");
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    break;
+                        receiptManagement.add(receiptManagement.creat());
+                        try {
+                            FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                            System.out.println("Receipt saved. ");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
                 case 3:
                     System.out.println("Enter Id change: ");
                     int editInForById = scanner.nextInt();
@@ -72,7 +72,7 @@ public class MainReceipt {
                     System.exit(0);
                     break;
                 default:
-                    TitlesManagement.titleDefault();
+                    Titles.titleDefault();
                     break;
             }
         }

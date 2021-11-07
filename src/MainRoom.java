@@ -2,7 +2,7 @@ import models.Room;
 
 import file.FireRoom2;
 import services.RoomManagement;
-import services.TitlesManagement;
+import services.Titles;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,10 +24,10 @@ public class MainRoom {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                TitlesManagement.titleRoom();
+                Titles.titleRoom();
                 choice = scanner.nextInt();
             } catch (Exception e) {
-                TitlesManagement.titleTryCatch();
+                Titles.titleTryCatch();
             }
             switch (choice) {
                 case 1 -> roomManagement.printList();
@@ -62,7 +62,7 @@ public class MainRoom {
                     System.out.println("You just chose number: " + choice + " --> Ending!...");
                     System.exit(0);
                 }
-                default -> TitlesManagement.titleDefault();
+                default -> Titles.titleDefault();
             }
         }
     }

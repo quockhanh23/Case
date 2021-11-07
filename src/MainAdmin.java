@@ -1,6 +1,6 @@
 import models.Admin;
 import services.AdminManagement;
-import services.TitlesManagement;
+import services.Titles;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class MainAdmin {
     public static void account() {
         AdminManagement adminManagement = new AdminManagement();
         adminManagement.add(new Admin("khanh", "123", "khanh", 18, 353413219, "khangaquay1@yahoo.com"));
-        TitlesManagement.wellCome();
+        Titles.wellCome();
         System.out.println("Please Login: ");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username: ");
@@ -33,10 +33,10 @@ public class MainAdmin {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                TitlesManagement.titleAdmin();
+                Titles.titleAdmin();
                 choice = scanner.nextInt();
             } catch (Exception e) {
-                TitlesManagement.titleTryCatch();
+                Titles.titleTryCatch();
             }
             switch (choice) {
                 case 1 -> adminManagement.printList();
@@ -46,7 +46,7 @@ public class MainAdmin {
                     System.out.println("You just chose number: " + choice + " --> Ending!...");
                     System.exit(0);
                 }
-                default -> TitlesManagement.titleDefault();
+                default -> Titles.titleDefault();
             }
         }
     }

@@ -1,6 +1,6 @@
 package services;
 
-public class TitlesManagement {
+public class Titles {
     public static void titleLogin() {
         System.out.println("___________________________________");
         System.out.println("Wellcome to The Continental hotel!. ");

@@ -1,5 +1,5 @@
-import services.IntrosManagement;
-import services.TitlesManagement;
+import services.Intros;
+import services.Titles;
 
 import java.util.Scanner;
 
@@ -9,8 +9,8 @@ public class MenuMain {
         while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
-                IntrosManagement.intro2();
-                TitlesManagement.titleSelectManagement();
+                Intros.intro2();
+                Titles.titleSelectManagement();
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1 -> MainAdmin.showAdmin();
@@ -21,10 +21,10 @@ public class MenuMain {
                         System.out.println("You just chose number: " + choice + " --> Ending!...");
                         System.exit(0);
                     }
-                    default -> TitlesManagement.titleDefault();
+                    default -> Titles.titleDefault();
                 }
             } catch (Exception e) {
-                TitlesManagement.titleTryCatch();
+                Titles.titleTryCatch();
             }
         }
     }

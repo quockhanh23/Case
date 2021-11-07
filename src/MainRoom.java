@@ -2,7 +2,7 @@ import models.Room;
 
 import files.FileRoom2;
 import services.RoomManagement;
-import services.Titles;
+import services.Notifications;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -24,10 +24,10 @@ public class MainRoom {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                Titles.titleRoom();
+                Notifications.titleRoom();
                 choice = scanner.nextInt();
             } catch (Exception e) {
-                Titles.titleTryCatch();
+                Notifications.alertTryCatch();
             }
             switch (choice) {
                 case 1 -> roomManagement.printList();
@@ -36,7 +36,7 @@ public class MainRoom {
                     System.out.println("Enter id want to change: ");
                     int edit = scanner.nextInt();
                     roomManagement.edit(edit, roomManagement.creat());
-                    Titles.titleSuccess();
+                    Notifications.alertSuccess();
                 }
                 case 4 -> {
                     System.out.println("Choice: ");
@@ -45,19 +45,19 @@ public class MainRoom {
                     System.out.println("Status = 3: Fixing room. ");
 
                     int status = scanner.nextInt();
-                    Titles.titleRoomFormat();
+                    Notifications.titleRoomFormat();
                     roomManagement.checkRoomByStatus(status);
                 }
                 case 5 -> {
                     System.out.println("Enter id to find: ");
                     int find = scanner.nextInt();
-                    Titles.titleRoomFormat();
+                    Notifications.titleRoomFormat();
                     roomManagement.findById2(find);
                 }
                 case 6 -> {
                     System.out.println("Enter price to find: ");
                     int price = scanner.nextInt();
-                    Titles.titleRoomFormat();
+                    Notifications.titleRoomFormat();
                     roomManagement.findRoomByPrice3(price);
                 }
                 case 7 -> FileRoom2.write("demo2.csv", roomManagement.getRoomList());
@@ -66,13 +66,13 @@ public class MainRoom {
                 case 10 -> {
                     int deleteId = scanner.nextInt();
                     roomManagement.delete(deleteId);
-                    Titles.titleSuccess();
+                    Notifications.alertSuccess();
                 }
                 case 0 -> {
-                    Titles.titleEnding();
+                    Notifications.alertEnding();
                     System.exit(0);
                 }
-                default -> Titles.titleDefaultSwitchCase();
+                default -> Notifications.alertDefaultSwitchCase();
             }
         }
     }

@@ -1,11 +1,9 @@
 package services;
 
 import models.Receipt;
-import models.Room;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,7 +49,7 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         int index = findIndexById(id);
         if (index != -1) {
             receiptList.remove(index);
-            Titles.titleSuccess();
+            Notifications.alertSuccess();
         }
     }
 
@@ -75,7 +73,7 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
 
     @Override
     public void printList() {
-        Titles.titleReceiptFormat();
+        Notifications.titleReceiptFormat();
         for (Receipt receipt : receiptList) {
             System.out.println(receipt);
         }

@@ -1,9 +1,9 @@
 package services;
 
-public class Titles {
+public class Notifications {
     public static void titleLogin() {
-        System.out.println("___________________________________");
-        System.out.println("Wellcome to The Continental hotel!. ");
+        Notifications.titleUnderLine();
+        Notifications.titleWellCome();
         System.out.println("Select number 1, if your already have an account: ");
         System.out.println("Select number 2, if your don't have account: ");
         System.out.println("1. Login --> (khanh - 123). ");
@@ -12,8 +12,8 @@ public class Titles {
     }
 
     public static void titleSelectManagement() {
-        System.out.println("___________________________________");
-        System.out.println("Wellcome to The Continental hotel!. ");
+        Notifications.titleUnderLine();
+        Notifications.titleWellCome();
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
         System.out.println("Select number: ");
         System.out.println("1. Admin manager. ");
@@ -24,8 +24,8 @@ public class Titles {
     }
 
     public static void titleRoom() {
-        System.out.println("___________________________________");
-        System.out.println("Wellcome to The Continental hotel!. ");
+        Notifications.titleUnderLine();
+        Notifications.titleWellCome();
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
         System.out.println("Select number: ");
         System.out.println("1. Print list rooms. ");
@@ -41,8 +41,8 @@ public class Titles {
     }
 
     public static void titleReceipt() {
-        System.out.println("___________________________________");
-        System.out.println("Wellcome to The Continental hotel!. ");
+        Notifications.titleUnderLine();
+        Notifications.titleWellCome();
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
         System.out.println("Select numbers: ");
         System.out.println("1. Print the list receipt. ");
@@ -58,8 +58,8 @@ public class Titles {
     }
 
     public static void titleAdmin() {
-        System.out.println("___________________________________");
-        System.out.println("Wellcome to The Continental hotel!. ");
+        Notifications.titleUnderLine();
+        Notifications.titleWellCome();
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
         System.out.println("Select number: ");
         System.out.println("1. Print the list admin. ");
@@ -68,14 +68,14 @@ public class Titles {
         System.out.println("0. End program. ");
     }
 
-    public static void titleTryCatch() {
+    public static void alertTryCatch() {
         System.err.println("Wrong input!. ");
-        System.out.println("___________________________________");
+        Notifications.titleUnderLine();
     }
 
-    public static void titleDefaultSwitchCase() {
+    public static void alertDefaultSwitchCase() {
         System.out.println("This option is not available. ");
-        System.out.println("___________________________________");
+        Notifications.titleUnderLine();
     }
 
     public static void titleAdminFormat() {
@@ -97,15 +97,15 @@ public class Titles {
         System.out.println("Wellcome to The Continental hotel!. ");
     }
 
-    public static void title____() {
+    public static void titleUnderLine() {
         System.out.println("___________________________________");
     }
 
-    public static void titleEnding() {
+    public static void alertEnding() {
         System.out.println("You just chose number: 0 --> Ending!...");
     }
 
-    public static void titleSuccess() {
+    public static void alertSuccess() {
         System.out.println("Successfully completed. ");
     }
 }

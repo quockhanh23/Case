@@ -58,7 +58,7 @@ public class RoomManagement implements Management<Room>, Serializable {
 
     @Override
     public void printList() {
-        Titles.titleRoomFormat();
+        Notifications.titleRoomFormat();
         for (Room room : roomList) {
             System.out.println(room);
         }

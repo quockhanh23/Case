@@ -1,5 +1,5 @@
 import services.Intros;
-import services.Titles;
+import services.Notifications;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class MenuMain {
             try {
                 Scanner scanner = new Scanner(System.in);
                 Intros.intro2();
-                Titles.titleSelectManagement();
+                Notifications.titleSelectManagement();
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1 -> MainAdmin.showAdmin();
@@ -18,13 +18,13 @@ public class MenuMain {
                     case 3 -> MainReceipt.mainReceipt();
                     case 4 -> MenuLogIn.logIn();
                     case 0 -> {
-                        Titles.titleEnding();
+                        Notifications.alertEnding();
                         System.exit(0);
                     }
-                    default -> Titles.titleDefaultSwitchCase();
+                    default -> Notifications.alertDefaultSwitchCase();
                 }
             } catch (Exception e) {
-                Titles.titleTryCatch();
+                Notifications.alertTryCatch();
             }
         }
     }

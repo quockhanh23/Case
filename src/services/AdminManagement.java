@@ -57,7 +57,7 @@ public class AdminManagement implements Management<Admin>, Serializable {
 
     @Override
     public void printList() {
-        Titles.titleAdminFormat();
+        Notifications.titleAdminFormat();
         for (Admin admin : adminList) {
             System.out.println(admin);
 

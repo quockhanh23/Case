@@ -18,7 +18,7 @@ public class Intros {
     }
 
     public static void intro2() {
-        Titles.title____();
+        Notifications.titleUnderLine();
         System.out.println("(⁀‵⁀) ✫ ✫ ✫.\n" +
                 "`⋎´✫¸.•°*”˜˜”*°•✫\n" +
                 "..✫¸.•°*”˜˜”*°•.✫\n" +
@@ -27,7 +27,7 @@ public class Intros {
     }
 
     public static void intro3() {
-        Titles.title____();
+        Notifications.titleUnderLine();
         System.out.println("░░░░░░███████ ]▄▄▄▄▄▄▄▄▃▃\n" +
                 " ▂▄▅█████████▅▄▃▂\n" +
                 "I███████████████████].\n" +

@@ -1,6 +1,6 @@
 import models.Admin;
 import services.AdminManagement;
-import services.Titles;
+import services.Notifications;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class MainAdmin {
     public static void account() {
         AdminManagement adminManagement = new AdminManagement();
         adminManagement.add(new Admin("khanh", "123", "khanh", 18, 353413219, "khangaquay1@yahoo.com"));
-        Titles.titleWellCome();
+        Notifications.titleWellCome();
         System.out.println("Please Login: ");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username: ");
@@ -18,7 +18,7 @@ public class MainAdmin {
         String pass = scanner.nextLine();
         boolean check = adminManagement.findUserAndPass(user, pass);
         if (check) {
-            Titles.titleSuccess();
+            Notifications.alertSuccess();
             MenuMain.showMenu();
         } else {
             System.out.println("Wrong username or password!. ");
@@ -33,23 +33,23 @@ public class MainAdmin {
         while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
-                Titles.titleAdmin();
+                Notifications.titleAdmin();
                 choice = scanner.nextInt();
             } catch (Exception e) {
-                Titles.titleTryCatch();
+                Notifications.alertTryCatch();
             }
             switch (choice) {
                 case 1 -> adminManagement.printList();
                 case 2 -> {
                     adminManagement.add(creat());
-                    Titles.titleSuccess();
+                    Notifications.alertSuccess();
                 }
                 case 3 -> MenuMain.showMenu();
                 case 0 -> {
-                    Titles.titleEnding();
+                    Notifications.alertEnding();
                     System.exit(0);
                 }
-                default -> Titles.titleDefaultSwitchCase();
+                default -> Notifications.alertDefaultSwitchCase();
             }
         }
     }

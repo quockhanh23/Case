@@ -14,8 +14,7 @@ public class Notifications {
     public static void titleSelectManagement() {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
-        System.out.println("My name is John Khánh Wick. Please follow me!. ");
-        System.out.println("Select number: ");
+        Notifications.alertBossAndSelect();
         System.out.println("1. Admin manager. ");
         System.out.println("2. Room manager. ");
         System.out.println("3. Receipt manager. ");
@@ -26,8 +25,7 @@ public class Notifications {
     public static void titleRoom() {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
-        System.out.println("My name is John Khánh Wick. Please follow me!. ");
-        System.out.println("Select number: ");
+        Notifications.alertBossAndSelect();
         System.out.println("1. Print list rooms. ");
         System.out.println("2. Add room. ");
         System.out.println("3. Edit info room. ");
@@ -36,15 +34,15 @@ public class Notifications {
         System.out.println("6. Find the room by price. ");
         System.out.println("7. write file. ");
         System.out.println("8. Print file. ");
-        System.out.println("9. Back to main menu. ");
+        System.out.println("9. Delete room by Id. ");
+        System.out.println("10. Back to main menu. ");
         System.out.println("0. End program. ");
     }
 
     public static void titleReceipt() {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
-        System.out.println("My name is John Khánh Wick. Please follow me!. ");
-        System.out.println("Select numbers: ");
+        Notifications.alertBossAndSelect();
         System.out.println("1. Print the list receipt. ");
         System.out.println("2. Add receipt. ");
         System.out.println("3. Find the receipt by id. ");
@@ -60,8 +58,7 @@ public class Notifications {
     public static void titleAdmin() {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
-        System.out.println("My name is John Khánh Wick. Please follow me!. ");
-        System.out.println("Select number: ");
+        Notifications.alertBossAndSelect();
         System.out.println("1. Print the list admin. ");
         System.out.println("2. Add admin. ");
         System.out.println("3. Back to main menu. ");
@@ -107,5 +104,10 @@ public class Notifications {
 
     public static void alertSuccess() {
         System.out.println("Successfully completed. ");
+    }
+
+    public static void alertBossAndSelect() {
+        System.out.println("My name is John Khánh Wick. Please follow me!. ");
+        System.out.println("Select number: ");
     }
 }

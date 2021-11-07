@@ -62,12 +62,13 @@ public class MainRoom {
                 }
                 case 7 -> FileRoom2.write("demo2.csv", roomManagement.getRoomList());
                 case 8 -> FileRoom2.read("demo2.csv");
-                case 9 -> MenuMain.showMenu();
-                case 10 -> {
+                case 9 -> {
+                    System.out.println("Enter Id room want to delete: ");
                     int deleteId = scanner.nextInt();
                     roomManagement.delete(deleteId);
                     Notifications.alertSuccess();
                 }
+                case 10 -> MenuMain.showMenu();
                 case 0 -> {
                     Notifications.alertEnding();
                     System.exit(0);

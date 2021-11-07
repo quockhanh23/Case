@@ -35,13 +35,13 @@ public class MainReceipt {
                     }
                     break;
                 case 3:
-                    System.out.println("Enter Id receipt want find: ");
+                    System.out.println("Enter Id receipt want to find: ");
                     int id = scanner.nextInt();
                     Notifications.titleReceiptFormat();
                     receiptManagement.findIndexById2(id);
                     break;
                 case 4:
-                    System.out.println("Enter Id receipt change: ");
+                    System.out.println("Enter Id receipt want to edit: ");
                     int editInForById = scanner.nextInt();
                     receiptManagement.edit(editInForById, receiptManagement.creat());
                     try {
@@ -72,7 +72,7 @@ public class MainReceipt {
                     receiptManagement.getTotalMoney();
                     break;
                 case 8:
-                    System.out.println("Enter Id receipt want delete: ");
+                    System.out.println("Enter Id receipt want to delete: ");
                     int deleteById = scanner.nextInt();
                     receiptManagement.delete2(deleteById);
                     break;

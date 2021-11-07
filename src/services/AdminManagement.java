@@ -46,9 +46,37 @@ public class AdminManagement implements Management<Admin>, Serializable {
         return 0;
     }
 
-    public boolean findUserAndPass(String name, String pass) {
+    public int findUser(String user, String pass) {
         for (int i = 0; i < adminList.size(); i++) {
-            if (adminList.get(i).getUseName().equals(name) && adminList.get(i).getPassWord().equals(pass)) {
+            if (adminList.get(i).getUseName().equals(user) && adminList.get(i).getPassWord().equals(pass)) {
+
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public String findPass(String pass) {
+        for (int i = 0; i < adminList.size(); i++) {
+            if (adminList.get(i).getPassWord().equals(pass)) {
+                return adminList.get(i).getPassWord();
+            }
+        }
+        return null;
+    }
+
+    public String findUser(String user) {
+        for (int i = 0; i < adminList.size(); i++) {
+            if (adminList.get(i).getUseName().equals(user)) {
+                return adminList.get(i).getUseName();
+            }
+        }
+        return null;
+    }
+
+    public boolean findUserAndPass(String user, String pass) {
+        for (int i = 0; i < adminList.size(); i++) {
+            if (adminList.get(i).getUseName().equals(user) && adminList.get(i).getPassWord().equals(pass)) {
                 return true;
             }
         }

@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class MenuLogIn {
     public static void logIn() {
+        int choice;
         while (true) {
             try {
-                int choice = -1;
                 Scanner scanner = new Scanner(System.in);
                 Intros.intro1();
                 Intros.intro2();
@@ -26,7 +26,6 @@ public class MenuLogIn {
                     }
                     default -> Notifications.alertDefaultSwitchCase();
                 }
-
             } catch (Exception e) {
                 System.err.println("Please choice 1 or 2. ");
                 Notifications.alertTryCatch();

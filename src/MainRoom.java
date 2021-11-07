@@ -33,36 +33,46 @@ public class MainRoom {
                 case 1 -> roomManagement.printList();
                 case 2 -> roomManagement.add(roomManagement.creat());
                 case 3 -> {
-                    System.out.println("Enter id want change: ");
+                    System.out.println("Enter id want to change: ");
                     int edit = scanner.nextInt();
                     roomManagement.edit(edit, roomManagement.creat());
+                    Titles.titleSuccess();
                 }
                 case 4 -> {
                     System.out.println("Choice: ");
                     System.out.println("Status = 1: Clear room. ");
                     System.out.println("Status = 2: Ready room. ");
                     System.out.println("Status = 3: Fixing room. ");
+
                     int status = scanner.nextInt();
+                    Titles.titleRoomFormat();
                     roomManagement.checkRoomByStatus(status);
                 }
                 case 5 -> {
                     System.out.println("Enter id to find: ");
                     int find = scanner.nextInt();
+                    Titles.titleRoomFormat();
                     roomManagement.findById2(find);
                 }
                 case 6 -> {
                     System.out.println("Enter price to find: ");
                     int price = scanner.nextInt();
-                    roomManagement.findRoomByPrice(price);
+                    Titles.titleRoomFormat();
+                    roomManagement.findRoomByPrice3(price);
                 }
                 case 7 -> FireRoom2.write("demo2.csv", roomManagement.getRoomList());
                 case 8 -> FireRoom2.read("demo2.csv");
                 case 9 -> MenuMain.showMenu();
+                case 10 -> {
+                    int deleteId = scanner.nextInt();
+                    roomManagement.delete(deleteId);
+                    Titles.titleSuccess();
+                }
                 case 0 -> {
-                    System.out.println("You just chose number: " + choice + " --> Ending!...");
+                    Titles.titleEnding();
                     System.exit(0);
                 }
-                default -> Titles.titleDefault();
+                default -> Titles.titleDefaultSwitchCase();
             }
         }
     }

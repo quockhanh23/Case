@@ -52,15 +52,13 @@ public class RoomManagement implements Management<Room>, Serializable {
             if (roomList.get(i).getRoomId() == id) {
                 return i;
             }
-
         }
         return -1;
     }
 
     @Override
     public void printList() {
-        System.out.println(String.format("%-12s%-10s%-12s%-12s%-5s",
-                "Room Id:", "Price:", "Status:", "Bed Room:", "Toilet:"));
+        Titles.titleRoomFormat();
         for (Room room : roomList) {
             System.out.println(room);
         }
@@ -73,6 +71,23 @@ public class RoomManagement implements Management<Room>, Serializable {
             }
         }
         return -1;
+    }
+
+    public void findRoomByPrice3(int price) {
+        for (int i = 0; i < roomList.size(); i++) {
+            if (roomList.get(i).getPrice() == price) {
+                System.out.println(roomList.get(i));
+            }
+        }
+        System.out.println("This price range is not available. ");
+    }
+
+    public void findRoomByPrice2(int price) {
+        int index = findRoomByPrice(price);
+        if (index != -1) {
+            System.out.println(roomList.get(index));
+        }
+        System.out.println("This price range is not available. ");
     }
 
     public void findById2(int id) {
@@ -103,7 +118,6 @@ public class RoomManagement implements Management<Room>, Serializable {
         System.out.println("Enter toilets: ");
         int numberOfToiLet = scanner.nextInt();
         return new Room(numberRoom, price, status, numberOfBedRoom, numberOfToiLet);
-
     }
 
     public int size() {

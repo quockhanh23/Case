@@ -47,11 +47,13 @@ public class Titles {
         System.out.println("Select numbers: ");
         System.out.println("1. Print the list receipt. ");
         System.out.println("2. Add receipt. ");
-        System.out.println("3. Edit receipt. ");
-        System.out.println("4. Write file. ");
-        System.out.println("5. Read file. ");
-        System.out.println("6. Total money. ");
-        System.out.println("7. Back to main menu. ");
+        System.out.println("3. Find the receipt by id. ");
+        System.out.println("4. Edit receipt. ");
+        System.out.println("5. Write file. ");
+        System.out.println("6. Read file. ");
+        System.out.println("7. Total money. ");
+        System.out.println("8. Delete receipt by id. ");
+        System.out.println("9. Back to main menu. ");
         System.out.println("0. End program. ");
     }
 
@@ -71,12 +73,39 @@ public class Titles {
         System.out.println("___________________________________");
     }
 
-    public static void titleDefault() {
+    public static void titleDefaultSwitchCase() {
         System.out.println("This option is not available. ");
         System.out.println("___________________________________");
     }
 
-    public static void wellCome() {
+    public static void titleAdminFormat() {
+        System.out.println(String.format("%-12s%-12s%-8s%-18s%-5s",
+                "User name:", "Name:", "Age:", "Phone numbers:", "Email address:"));
+    }
+
+    public static void titleRoomFormat() {
+        System.out.println(String.format("%-12s%-10s%-12s%-12s%-5s",
+                "Room Id:", "Price:", "Status:", "Bed Room:", "Toilet:"));
+    }
+
+    public static void titleReceiptFormat() {
+        System.out.println(String.format("%-15s%-25s%-25s%-20s%-20s%-5s",
+                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In/month", "Day Out/month", "Total Money:"));
+    }
+
+    public static void titleWellCome() {
         System.out.println("Wellcome to The Continental hotel!. ");
+    }
+
+    public static void title____() {
+        System.out.println("___________________________________");
+    }
+
+    public static void titleEnding() {
+        System.out.println("You just chose number: 0 --> Ending!...");
+    }
+
+    public static void titleSuccess() {
+        System.out.println("Successfully completed. ");
     }
 }

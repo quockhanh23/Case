@@ -18,10 +18,10 @@ public class MenuMain {
                     case 3 -> MainReceipt.mainReceipt();
                     case 4 -> MenuLogIn.logIn();
                     case 0 -> {
-                        System.out.println("You just chose number: " + choice + " --> Ending!...");
+                        Titles.titleEnding();
                         System.exit(0);
                     }
-                    default -> Titles.titleDefault();
+                    default -> Titles.titleDefaultSwitchCase();
                 }
             } catch (Exception e) {
                 Titles.titleTryCatch();

@@ -28,8 +28,6 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         this.receiptList = receiptList;
     }
 
-    ;
-
     @Override
     public void add(Receipt receipt) {
         receiptList.add(receipt);
@@ -49,6 +47,14 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
 
     }
 
+    public void delete2(int id) {
+        int index = findIndexById(id);
+        if (index != -1) {
+            receiptList.remove(index);
+            Titles.titleSuccess();
+        }
+    }
+
     @Override
     public int findIndexById(int id) {
         for (int i = 0; i < receiptList.size(); i++) {
@@ -59,14 +65,20 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         return -1;
     }
 
+    public void findIndexById2(int id) {
+        for (int i = 0; i < receiptList.size(); i++) {
+            if (receiptList.get(i).getReceiptId() == id) {
+                System.out.println(receiptList.get(i));
+            }
+        }
+    }
+
     @Override
     public void printList() {
-        System.out.println(String.format("%-15s%-25s%-25s%-20s%-20s%-5s",
-                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In/month", "Day Out/month", "Total Money:"));
+        Titles.titleReceiptFormat();
         for (Receipt receipt : receiptList) {
             System.out.println(receipt);
         }
-
     }
 
     public Receipt creat() {

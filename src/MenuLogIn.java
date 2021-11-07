@@ -17,10 +17,14 @@ public class MenuLogIn {
                     case 1 -> MainAdmin.account();
                     case 2 -> {
                         MainAdmin.creat();
+                        Titles.titleSuccess();
                         MenuMain.showMenu();
                     }
-                    case 0 -> System.exit(0);
-                    default -> Titles.titleDefault();
+                    case 0 -> {
+                        Titles.titleEnding();
+                        System.exit(0);
+                    }
+                    default -> Titles.titleDefaultSwitchCase();
                 }
 
             } catch (Exception e) {

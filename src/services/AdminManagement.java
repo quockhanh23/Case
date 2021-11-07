@@ -57,8 +57,7 @@ public class AdminManagement implements Management<Admin>, Serializable {
 
     @Override
     public void printList() {
-        System.out.println(String.format("%-12s%-12s%-8s%-18s%-5s",
-                "User name: ", "Name: ", "Age: ", "Phone numbers: ", "Email address: "));
+        Titles.titleAdminFormat();
         for (Admin admin : adminList) {
             System.out.println(admin);
 

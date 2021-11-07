@@ -17,7 +17,6 @@ public class MainReceipt {
             try {
                 Titles.titleReceipt();
                 choice = scanner.nextInt();
-
             } catch (Exception e) {
                 Titles.titleTryCatch();
             }
@@ -26,28 +25,28 @@ public class MainReceipt {
                     receiptManagement.printList();
                     break;
                 case 2:
-                        receiptManagement.add(receiptManagement.creat());
-                        try {
-                            FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
-                            System.out.println("Receipt saved. ");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        break;
-                case 3:
-                    System.out.println("Enter Id change: ");
-                    int editInForById = scanner.nextInt();
-                    receiptManagement.edit(editInForById, receiptManagement.creat());
+                    receiptManagement.add(receiptManagement.creat());
                     try {
                         FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        Titles.titleSuccess();
                         System.out.println("Receipt saved. ");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     break;
+                case 3:
+                    System.out.println("Enter Id receipt want find: ");
+                    int id = scanner.nextInt();
+                    Titles.titleReceiptFormat();
+                    receiptManagement.findIndexById2(id);
+                    break;
                 case 4:
+                    System.out.println("Enter Id receipt change: ");
+                    int editInForById = scanner.nextInt();
+                    receiptManagement.edit(editInForById, receiptManagement.creat());
                     try {
                         FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        Titles.titleSuccess();
                         System.out.println("Receipt saved. ");
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -55,24 +54,37 @@ public class MainReceipt {
                     break;
                 case 5:
                     try {
-                        FireReceipt.read2("fileReceipt.csv");
+                        FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        System.out.println("Receipt saved. ");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     break;
                 case 6:
-                    System.out.println("___________________________________");
-                    receiptManagement.getTotalMoney();
+                    try {
+                        FireReceipt.read2("fileReceipt.csv");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 7:
+                    Titles.title____();
+                    receiptManagement.getTotalMoney();
+                    break;
+                case 8:
+                    System.out.println("Enter Id receipt want delete: ");
+                    int deleteById = scanner.nextInt();
+                    receiptManagement.delete2(deleteById);
+                    break;
+                case 9:
                     MenuMain.showMenu();
                     break;
                 case 0:
-                    System.out.println("You just chose number: " + choice + " --> Ending!...");
+                    Titles.titleEnding();
                     System.exit(0);
                     break;
                 default:
-                    Titles.titleDefault();
+                    Titles.titleDefaultSwitchCase();
                     break;
             }
         }

@@ -9,7 +9,7 @@ public class MainAdmin {
     public static void account() {
         AdminManagement adminManagement = new AdminManagement();
         adminManagement.add(new Admin("khanh", "123", "khanh", 18, 353413219, "khangaquay1@yahoo.com"));
-        Titles.wellCome();
+        Titles.titleWellCome();
         System.out.println("Please Login: ");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username: ");
@@ -18,7 +18,7 @@ public class MainAdmin {
         String pass = scanner.nextLine();
         boolean check = adminManagement.findUserAndPass(user, pass);
         if (check) {
-            System.out.println("Successful login.");
+            Titles.titleSuccess();
             MenuMain.showMenu();
         } else {
             System.out.println("Wrong username or password!. ");
@@ -40,13 +40,16 @@ public class MainAdmin {
             }
             switch (choice) {
                 case 1 -> adminManagement.printList();
-                case 2 -> adminManagement.add(creat());
+                case 2 -> {
+                    adminManagement.add(creat());
+                    Titles.titleSuccess();
+                }
                 case 3 -> MenuMain.showMenu();
                 case 0 -> {
-                    System.out.println("You just chose number: " + choice + " --> Ending!...");
+                    Titles.titleEnding();
                     System.exit(0);
                 }
-                default -> Titles.titleDefault();
+                default -> Titles.titleDefaultSwitchCase();
             }
         }
     }

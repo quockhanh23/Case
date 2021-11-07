@@ -1,5 +1,6 @@
 import models.Admin;
 import services.AdminManagement;
+import services.Intros;
 import services.Notifications;
 
 import java.util.Scanner;
@@ -47,6 +48,7 @@ public class MainAdmin {
                 case 3 -> MenuMain.showMenu();
                 case 0 -> {
                     Notifications.alertEnding();
+                    Intros.intro3();
                     System.exit(0);
                 }
                 default -> Notifications.alertDefaultSwitchCase();

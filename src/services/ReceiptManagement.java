@@ -89,7 +89,7 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         String checkIn = scanner.nextLine();
         System.out.println("Enter last day: ");
         String checkOut = scanner.nextLine();
-        System.out.println("Enter receipt Id: ");
+        System.out.println("Enter receipt ID: ");
         int receiptId = scanner.nextInt();
         System.out.println("Enter total bill: ");
         double receiptPrice = scanner.nextDouble();

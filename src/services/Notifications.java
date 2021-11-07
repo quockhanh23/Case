@@ -26,15 +26,15 @@ public class Notifications {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
         Notifications.alertBossAndSelect();
-        System.out.println("1. Print list rooms. ");
+        System.out.println("1. Print list of room. ");
         System.out.println("2. Add room. ");
         System.out.println("3. Edit info room. ");
         System.out.println("4. Check room. ");
-        System.out.println("5. Find the room by id. ");
+        System.out.println("5. Find the room by ID. ");
         System.out.println("6. Find the room by price. ");
         System.out.println("7. write file. ");
         System.out.println("8. Print file. ");
-        System.out.println("9. Delete room by Id. ");
+        System.out.println("9. Delete room by ID. ");
         System.out.println("10. Back to main menu. ");
         System.out.println("0. End program. ");
     }
@@ -43,14 +43,14 @@ public class Notifications {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
         Notifications.alertBossAndSelect();
-        System.out.println("1. Print the list receipt. ");
+        System.out.println("1. Print list of receipt. ");
         System.out.println("2. Add receipt. ");
-        System.out.println("3. Find the receipt by id. ");
+        System.out.println("3. Find the receipt by ID. ");
         System.out.println("4. Edit receipt. ");
         System.out.println("5. Write file. ");
         System.out.println("6. Read file. ");
         System.out.println("7. Total money. ");
-        System.out.println("8. Delete receipt by id. ");
+        System.out.println("8. Delete receipt by ID. ");
         System.out.println("9. Back to main menu. ");
         System.out.println("0. End program. ");
     }
@@ -59,7 +59,7 @@ public class Notifications {
         Notifications.titleUnderLine();
         Notifications.titleWellCome();
         Notifications.alertBossAndSelect();
-        System.out.println("1. Print the list admin. ");
+        System.out.println("1. Print list of admin. ");
         System.out.println("2. Add admin. ");
         System.out.println("3. Back to main menu. ");
         System.out.println("0. End program. ");

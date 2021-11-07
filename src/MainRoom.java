@@ -1,6 +1,7 @@
 import models.Room;
 
 import files.FileRoom2;
+import services.Intros;
 import services.RoomManagement;
 import services.Notifications;
 
@@ -33,7 +34,7 @@ public class MainRoom {
                 case 1 -> roomManagement.printList();
                 case 2 -> roomManagement.add(roomManagement.creat());
                 case 3 -> {
-                    System.out.println("Enter id want to change: ");
+                    System.out.println("Enter ID want to change: ");
                     int edit = scanner.nextInt();
                     roomManagement.edit(edit, roomManagement.creat());
                     Notifications.alertSuccess();
@@ -49,10 +50,10 @@ public class MainRoom {
                     roomManagement.checkRoomByStatus(status);
                 }
                 case 5 -> {
-                    System.out.println("Enter id to find: ");
+                    System.out.println("Enter ID to find: ");
                     int find = scanner.nextInt();
                     Notifications.titleRoomFormat();
-                    roomManagement.findById2(find);
+                    roomManagement.findRoomById2(find);
                 }
                 case 6 -> {
                     System.out.println("Enter price to find: ");
@@ -71,6 +72,7 @@ public class MainRoom {
                 case 10 -> MenuMain.showMenu();
                 case 0 -> {
                     Notifications.alertEnding();
+                    Intros.intro3();
                     System.exit(0);
                 }
                 default -> Notifications.alertDefaultSwitchCase();

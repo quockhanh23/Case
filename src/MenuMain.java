@@ -19,6 +19,7 @@ public class MenuMain {
                     case 4 -> MenuLogIn.logIn();
                     case 0 -> {
                         Notifications.alertEnding();
+                        Intros.intro3();
                         System.exit(0);
                     }
                     default -> Notifications.alertDefaultSwitchCase();

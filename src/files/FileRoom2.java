@@ -1,4 +1,4 @@
-package file;
+package files;
 
 import models.Room;
 import services.RoomManagement;
@@ -6,7 +6,7 @@ import services.RoomManagement;
 import java.io.*;
 import java.util.List;
 
-public class FireRoom2 {
+public class FileRoom2 {
     public static void write(String path, List<Room> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

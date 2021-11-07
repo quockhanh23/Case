@@ -1,5 +1,5 @@
 import models.Receipt;
-import file.FireReceipt;
+import files.FileReceipt;
 import services.ReceiptManagement;
 import services.Titles;
 
@@ -27,7 +27,7 @@ public class MainReceipt {
                 case 2:
                     receiptManagement.add(receiptManagement.creat());
                     try {
-                        FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         Titles.titleSuccess();
                         System.out.println("Receipt saved. ");
                     } catch (Exception e) {
@@ -45,7 +45,7 @@ public class MainReceipt {
                     int editInForById = scanner.nextInt();
                     receiptManagement.edit(editInForById, receiptManagement.creat());
                     try {
-                        FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         Titles.titleSuccess();
                         System.out.println("Receipt saved. ");
                     } catch (Exception e) {
@@ -54,7 +54,7 @@ public class MainReceipt {
                     break;
                 case 5:
                     try {
-                        FireReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         System.out.println("Receipt saved. ");
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -62,7 +62,7 @@ public class MainReceipt {
                     break;
                 case 6:
                     try {
-                        FireReceipt.read2("fileReceipt.csv");
+                        FileReceipt.read2("fileReceipt.csv");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

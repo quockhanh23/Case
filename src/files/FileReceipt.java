@@ -1,13 +1,12 @@
-package file;
+package files;
 
 import models.Receipt;
-import models.Room;
 import services.ReceiptManagement;
 
 import java.io.*;
 import java.util.List;
 
-public class FireReceipt {
+public class FileReceipt {
     public static void write2(String path, List<Receipt> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

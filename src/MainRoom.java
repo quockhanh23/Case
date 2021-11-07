@@ -1,6 +1,6 @@
 import models.Room;
 
-import file.FireRoom2;
+import files.FileRoom2;
 import services.RoomManagement;
 import services.Titles;
 
@@ -60,8 +60,8 @@ public class MainRoom {
                     Titles.titleRoomFormat();
                     roomManagement.findRoomByPrice3(price);
                 }
-                case 7 -> FireRoom2.write("demo2.csv", roomManagement.getRoomList());
-                case 8 -> FireRoom2.read("demo2.csv");
+                case 7 -> FileRoom2.write("demo2.csv", roomManagement.getRoomList());
+                case 8 -> FileRoom2.read("demo2.csv");
                 case 9 -> MenuMain.showMenu();
                 case 10 -> {
                     int deleteId = scanner.nextInt();

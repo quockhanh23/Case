@@ -1,14 +1,13 @@
-package file;
+package files;
 
-import models.Receipt;
 import models.Room;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileReceipt2 {
-    public static void fireWrite2(String patch, List<Receipt> roomList) {
+public class FileRoom {
+    public static void fireWrite(String patch, List<Room> roomList) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(patch);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -20,19 +19,19 @@ public class FileReceipt2 {
         }
     }
 
-    public static List<Receipt> readData2(String patch) {
-        List<Receipt> receiptList = new ArrayList<>();
+    public static List<Room> readData(String patch) {
+        List<Room> roomList = new ArrayList<>();
         try {
             FileInputStream fileInputStream = new FileInputStream(patch);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            receiptList = (List<Receipt>) objectInputStream.readObject();
+            roomList = (List<Room>) objectInputStream.readObject();
             fileInputStream.close();
             objectInputStream.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        for (Receipt receipt : receiptList) {
-            System.out.println(receipt);
+        for (Room room : roomList) {
+            System.out.println(room);
         }
         return null;
     }

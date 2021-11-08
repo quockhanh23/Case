@@ -125,4 +125,7 @@ public class Notifications {
     public static void alertDeleteId() {
         System.out.println("Enter ID want to delete: ");
     }
+    public static void alertSaved() {
+        System.out.println("Receipt saved. ");
+    }
 }

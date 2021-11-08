@@ -30,7 +30,7 @@ public class MainReceipt {
                     try {
                         FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSuccess();
-                        System.out.println("Receipt saved. ");
+                        Notifications.alertSaved();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -48,7 +48,7 @@ public class MainReceipt {
                     try {
                         FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSuccess();
-                        System.out.println("Receipt saved. ");
+                        Notifications.alertSaved();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -57,7 +57,7 @@ public class MainReceipt {
                     try {
                         FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSuccess();
-                        System.out.println("Receipt saved. ");
+                        Notifications.alertSaved();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -80,7 +80,7 @@ public class MainReceipt {
                     receiptManagement.delete2(deleteById);
                     break;
                 case 9:
-                    MenuMain.showMenu();
+                    MainManagement.showMenu();
                     break;
                 case 0:
                     Notifications.alertEnding();

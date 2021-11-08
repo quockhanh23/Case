@@ -1,5 +1,5 @@
-public class TotalMain {
+public class MainTotal {
     public static void main(String[] args) {
-        MenuLogIn.logIn();
+        MainLogIn.logIn();
     }
 }

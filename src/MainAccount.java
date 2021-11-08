@@ -21,14 +21,14 @@ public class MainAccount {
         boolean check = accountManagement.findUserAndPass(user, pass);
         if (check) {
             Notifications.alertSuccess();
-            MenuMain.showMenu();
+            MainManagement.showMenu();
         } else {
             System.out.println("Wrong username or password!. ");
             System.out.println("Please log in again: ");
         }
     }
 
-    public static void showAdmin() {
+    public static void accountMenu() {
         AccountManagement accountManagement = new AccountManagement();
         accountManagement.add(new Admin("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
         int choice = -1;
@@ -46,7 +46,7 @@ public class MainAccount {
                     accountManagement.add(creat());
                     Notifications.alertSuccess();
                 }
-                case 3 -> MenuMain.showMenu();
+                case 3 -> MainManagement.showMenu();
                 case 0 -> {
                     Notifications.alertEnding();
                     Intros.intro3();

@@ -14,9 +14,9 @@ public class MenuLogIn {
                 Notifications.titleLogin();
                 choice = scanner.nextInt();
                 switch (choice) {
-                    case 1 -> MainAdmin.account();
+                    case 1 -> MainAccount.account();
                     case 2 -> {
-                        MainAdmin.creat();
+                        MainAccount.creat();
                         Notifications.alertSuccess();
                         MenuMain.showMenu();
                     }

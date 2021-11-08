@@ -6,14 +6,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminManagement implements Management<Admin>, Serializable {
+public class AccountManagement implements Management<Admin>, Serializable {
     private List<Admin> adminList = new ArrayList<>();
 
-    public AdminManagement(List<Admin> adminList) {
+    public AccountManagement(List<Admin> adminList) {
         this.adminList = adminList;
     }
 
-    public AdminManagement() {
+    public AccountManagement() {
         adminList = new ArrayList<>();
     }
 

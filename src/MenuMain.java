@@ -13,7 +13,7 @@ public class MenuMain {
                 Notifications.titleSelectManagement();
                 choice = scanner.nextInt();
                 switch (choice) {
-                    case 1 -> MainAdmin.showAdmin();
+                    case 1 -> MainAccount.showAdmin();
                     case 2 -> MainRoom.mainRoom();
                     case 3 -> MainReceipt.mainReceipt();
                     case 4 -> MenuLogIn.logIn();

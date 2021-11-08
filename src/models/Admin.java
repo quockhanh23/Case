@@ -5,10 +5,10 @@ public class Admin {
     private String passWord;
     private String name;
     private int age;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
 
-    public Admin(String useName, String passWord, String name, int age, int phoneNumber, String email) {
+    public Admin(String useName, String passWord, String name, int age, String phoneNumber, String email) {
         this.useName = useName;
         this.passWord = passWord;
         this.name = name;
@@ -52,11 +52,11 @@ public class Admin {
         this.age = age;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

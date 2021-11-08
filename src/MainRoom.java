@@ -32,19 +32,17 @@ public class MainRoom {
             }
             switch (choice) {
                 case 1 -> roomManagement.printList();
-                case 2 -> roomManagement.add(roomManagement.creat());
+                case 2 -> {
+                    roomManagement.add(roomManagement.creat());
+                    Notifications.alertSuccess();
+                }
                 case 3 -> {
                     System.out.println("Enter ID want to change: ");
                     int edit = scanner.nextInt();
                     roomManagement.edit(edit, roomManagement.creat());
-                    Notifications.alertSuccess();
                 }
                 case 4 -> {
-                    System.out.println("Choice: ");
-                    System.out.println("Status = 1: Clear room. ");
-                    System.out.println("Status = 2: Ready room. ");
-                    System.out.println("Status = 3: Fixing room. ");
-
+                    Notifications.choiceStatus();
                     int status = scanner.nextInt();
                     Notifications.titleRoomFormat();
                     roomManagement.checkRoomByStatus(status);
@@ -61,13 +59,18 @@ public class MainRoom {
                     Notifications.titleRoomFormat();
                     roomManagement.findRoomByPrice3(price);
                 }
-                case 7 -> FileRoom2.write("demo2.csv", roomManagement.getRoomList());
-                case 8 -> FileRoom2.read("demo2.csv");
+                case 7 -> {
+                    FileRoom2.write("demo2.csv", roomManagement.getRoomList());
+                    Notifications.alertSuccess();
+                }
+                case 8 -> {
+                    FileRoom2.read("demo2.csv");
+                    Notifications.alertSuccess();
+                }
                 case 9 -> {
-                    System.out.println("Enter Id room want to delete: ");
+                    System.out.println("Enter ID room want to delete: ");
                     int deleteId = scanner.nextInt();
                     roomManagement.delete(deleteId);
-                    Notifications.alertSuccess();
                 }
                 case 10 -> MenuMain.showMenu();
                 case 0 -> {

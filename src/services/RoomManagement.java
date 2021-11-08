@@ -36,6 +36,7 @@ public class RoomManagement implements Management<Room>, Serializable {
     public void edit(int id, Room room) {
         int index = findIndexById(id);
         roomList.set(index, room);
+        Notifications.alertSuccess();
 
     }
 
@@ -43,6 +44,7 @@ public class RoomManagement implements Management<Room>, Serializable {
     public void delete(int id) {
         int index = findIndexById(id);
         roomList.remove(index);
+        Notifications.alertSuccess();
 
     }
 

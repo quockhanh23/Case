@@ -4,13 +4,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-    private static final String ACCOUNT_REGEX = "^[a-z0-9]{4,}$";
-    private static final String PASS_REGEX = "^[a-z0-9]{4,}$";
-    private static final String PHONE_REGEX = "^[0-9]{10,}$";
-    private static final String EMAIL_REGEX = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
-
-    public Regex() {
-    }
+    public static final String USER_NAME_REGEX="^[a-z0-9]{5,}$";
+    public static final String PASSWORD_REGEX="^[\\w]{3,}";
+    public static final String PHONE_NUMBER_REGEX="^[\\d]{10}$";
+    public static final String LICENSE_REGEX="^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
 
     public static boolean validate(String string, String regex) {
         Pattern pattern = Pattern.compile(regex);

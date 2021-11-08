@@ -56,6 +56,7 @@ public class MainReceipt {
                 case 5:
                     try {
                         FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        Notifications.alertSuccess();
                         System.out.println("Receipt saved. ");
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -64,6 +65,7 @@ public class MainReceipt {
                 case 6:
                     try {
                         FileReceipt.read2("fileReceipt.csv");
+                        Notifications.alertSuccess();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

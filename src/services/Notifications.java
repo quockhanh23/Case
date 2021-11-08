@@ -110,4 +110,10 @@ public class Notifications {
         System.out.println("My name is John Khánh Wick. Please follow me!. ");
         System.out.println("Select number: ");
     }
+    public static void choiceStatus() {
+        System.out.println("Choice: ");
+        System.out.println("Status = 1: Clear room. ");
+        System.out.println("Status = 2: Ready room. ");
+        System.out.println("Status = 3: Fixing room. ");
+    }
 }

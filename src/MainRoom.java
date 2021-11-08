@@ -37,18 +37,18 @@ public class MainRoom {
                     Notifications.alertSuccess();
                 }
                 case 3 -> {
-                    System.out.println("Enter ID want to change: ");
+                    Notifications.alertEditId();
                     int edit = scanner.nextInt();
                     roomManagement.edit(edit, roomManagement.creat());
                 }
                 case 4 -> {
-                    Notifications.choiceStatus();
+                    Notifications.alertChoiceStatus();
                     int status = scanner.nextInt();
                     Notifications.titleRoomFormat();
                     roomManagement.checkRoomByStatus(status);
                 }
                 case 5 -> {
-                    System.out.println("Enter ID to find: ");
+                    Notifications.alertFindId();
                     int find = scanner.nextInt();
                     Notifications.titleRoomFormat();
                     roomManagement.findRoomById2(find);
@@ -68,7 +68,7 @@ public class MainRoom {
                     Notifications.alertSuccess();
                 }
                 case 9 -> {
-                    System.out.println("Enter ID room want to delete: ");
+                    Notifications.alertDeleteId();
                     int deleteId = scanner.nextInt();
                     roomManagement.delete(deleteId);
                 }

@@ -45,7 +45,6 @@ public class RoomManagement implements Management<Room>, Serializable {
         int index = findIndexById(id);
         roomList.remove(index);
         Notifications.alertSuccess();
-
     }
 
     @Override
@@ -94,7 +93,10 @@ public class RoomManagement implements Management<Room>, Serializable {
         int index = findIndexById(id);
         if (index != -1) {
             System.out.println(roomList.get(index));
+        } else {
+            Notifications.alertCantFind();
         }
+
     }
 
     public void checkRoomByStatus(int status) {
@@ -105,7 +107,7 @@ public class RoomManagement implements Management<Room>, Serializable {
         }
     }
 
-    public Room creat() {
+    public Room create() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter new ID: ");
         int numberRoom = scanner.nextInt();

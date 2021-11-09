@@ -1,38 +1,38 @@
 package services;
 
-import models.Admin;
+import models.Account;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountManagement implements Management<Admin>, Serializable {
-    private List<Admin> adminList = new ArrayList<>();
+public class AccountManagement implements Management<Account>, Serializable {
+    private List<Account> accountList = new ArrayList<>();
 
-    public AccountManagement(List<Admin> adminList) {
-        this.adminList = adminList;
+    public AccountManagement(List<Account> accountList) {
+        this.accountList = accountList;
     }
 
     public AccountManagement() {
-        adminList = new ArrayList<>();
+        accountList = new ArrayList<>();
     }
 
-    public List<Admin> getAdminList() {
-        return adminList;
+    public List<Account> getAdminList() {
+        return accountList;
     }
 
-    public void setAdminList(List<Admin> adminList) {
-        this.adminList = adminList;
-    }
-
-    @Override
-    public void add(Admin admin) {
-        adminList.add(admin);
-
+    public void setAdminList(List<Account> accountList) {
+        this.accountList = accountList;
     }
 
     @Override
-    public void edit(int id, Admin admin) {
+    public void add(Account account) {
+        accountList.add(account);
+
+    }
+
+    @Override
+    public void edit(int id, Account account) {
 
     }
 
@@ -47,8 +47,8 @@ public class AccountManagement implements Management<Admin>, Serializable {
     }
 
     public int findUserAndPass2(String user, String pass) {
-        for (int i = 0; i < adminList.size(); i++) {
-            if (adminList.get(i).getUseName().equals(user) && adminList.get(i).getPassWord().equals(pass)) {
+        for (int i = 0; i < accountList.size(); i++) {
+            if (accountList.get(i).getUseName().equals(user) && accountList.get(i).getPassWord().equals(pass)) {
 
                 return i;
             }
@@ -57,26 +57,26 @@ public class AccountManagement implements Management<Admin>, Serializable {
     }
 
     public String findPass(String pass) {
-        for (int i = 0; i < adminList.size(); i++) {
-            if (adminList.get(i).getPassWord().equals(pass)) {
-                return adminList.get(i).getPassWord();
+        for (int i = 0; i < accountList.size(); i++) {
+            if (accountList.get(i).getPassWord().equals(pass)) {
+                return accountList.get(i).getPassWord();
             }
         }
         return null;
     }
 
     public String findUser(String user) {
-        for (int i = 0; i < adminList.size(); i++) {
-            if (adminList.get(i).getUseName().equals(user)) {
-                return adminList.get(i).getUseName();
+        for (int i = 0; i < accountList.size(); i++) {
+            if (accountList.get(i).getUseName().equals(user)) {
+                return accountList.get(i).getUseName();
             }
         }
         return null;
     }
 
     public boolean findUserAndPass(String user, String pass) {
-        for (int i = 0; i < adminList.size(); i++) {
-            if (adminList.get(i).getUseName().equals(user) && adminList.get(i).getPassWord().equals(pass)) {
+        for (int i = 0; i < accountList.size(); i++) {
+            if (accountList.get(i).getUseName().equals(user) && accountList.get(i).getPassWord().equals(pass)) {
                 return true;
             }
         }
@@ -86,8 +86,8 @@ public class AccountManagement implements Management<Admin>, Serializable {
     @Override
     public void printList() {
         Notifications.titleAdminFormat();
-        for (Admin admin : adminList) {
-            System.out.println(admin);
+        for (Account account : accountList) {
+            System.out.println(account);
 
         }
     }

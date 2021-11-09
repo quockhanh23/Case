@@ -33,13 +33,13 @@ public class MainRoom {
             switch (choice) {
                 case 1 -> roomManagement.printList();
                 case 2 -> {
-                    roomManagement.add(roomManagement.creat());
+                    roomManagement.add(roomManagement.create());
                     Notifications.alertSuccess();
                 }
                 case 3 -> {
                     Notifications.alertEditId();
                     int edit = scanner.nextInt();
-                    roomManagement.edit(edit, roomManagement.creat());
+                    roomManagement.edit(edit, roomManagement.create());
                 }
                 case 4 -> {
                     Notifications.alertChoiceStatus();

@@ -1,6 +1,6 @@
-import models.Admin;
+import models.Account;
 import services.AccountManagement;
-import services.FormatCreatAccount;
+import services.FormatCreateAccount;
 import services.Intros;
 import services.Notifications;
 
@@ -10,7 +10,7 @@ public class MainAccount {
 
     public static void account() {
         AccountManagement accountManagement = new AccountManagement();
-        accountManagement.add(new Admin("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
+        accountManagement.add(new Account("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
         Notifications.titleWellCome();
         System.out.println("Please Login: ");
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +30,7 @@ public class MainAccount {
 
     public static void accountMenu() {
         AccountManagement accountManagement = new AccountManagement();
-        accountManagement.add(new Admin("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
+        accountManagement.add(new Account("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
         int choice = -1;
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -57,16 +57,16 @@ public class MainAccount {
         }
     }
 
-    public static Admin creat() {
+    public static Account creat() {
         Scanner scanner = new Scanner(System.in);
-        String useName = FormatCreatAccount.inputClientAccount();
-        String pass = FormatCreatAccount.inputClientPassword();
+        String useName = FormatCreateAccount.inputClientAccount();
+        String pass = FormatCreateAccount.inputClientPassword();
         System.out.print("Enter client name: ");
         String name = scanner.nextLine();
-        String email = FormatCreatAccount.inputEmail();
+        String email = FormatCreateAccount.inputEmail();
         System.out.print("Enter client age: ");
         int age = scanner.nextInt();
-        String phone = FormatCreatAccount.inputPhoneNumber();
-        return new Admin(useName, pass, name, age, phone, email);
+        String phone = FormatCreateAccount.inputPhoneNumber();
+        return new Account(useName, pass, name, age, phone, email);
     }
 }

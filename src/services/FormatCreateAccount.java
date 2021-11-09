@@ -4,7 +4,7 @@ import models.Regex;
 
 import java.util.Scanner;
 
-public class FormatCreatAccount {
+public class FormatCreateAccount {
     public static String inputPhoneNumber() {
         Scanner scanner = new Scanner(System.in);
         String clientPhoneNumber;

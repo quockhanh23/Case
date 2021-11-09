@@ -1,6 +1,6 @@
 package models;
 
-public class Admin {
+public class Account {
     private String useName;
     private String passWord;
     private String name;
@@ -8,7 +8,7 @@ public class Admin {
     private String phoneNumber;
     private String email;
 
-    public Admin(String useName, String passWord, String name, int age, String phoneNumber, String email) {
+    public Account(String useName, String passWord, String name, int age, String phoneNumber, String email) {
         this.useName = useName;
         this.passWord = passWord;
         this.name = name;
@@ -17,7 +17,7 @@ public class Admin {
         this.email = email;
     }
 
-    public Admin() {
+    public Account() {
     }
 
     public String getUseName() {

@@ -1,3 +1,4 @@
+import services.AccountManagement;
 import services.Intros;
 import services.Notifications;
 
@@ -16,7 +17,7 @@ public class MainLogIn {
                 switch (choice) {
                     case 1 -> MainAccount.account();
                     case 2 -> {
-                        MainAccount.creat();
+                        AccountManagement.create();
                         Notifications.alertSuccess();
                         MainManagement.showMenu();
                     }

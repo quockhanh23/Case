@@ -50,6 +50,8 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         if (index != -1) {
             receiptList.remove(index);
             Notifications.alertSuccess();
+        } else {
+            Notifications.alertCantFind();
         }
     }
 
@@ -77,6 +79,15 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         for (Receipt receipt : receiptList) {
             System.out.println(receipt);
         }
+    }
+
+    public boolean booleanCheckReceiptById(int id) {
+        for (int i = 0; i < receiptList.size(); i++) {
+            if (receiptList.get(i).getReceiptId() == id) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Receipt creat() {

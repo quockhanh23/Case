@@ -65,6 +65,15 @@ public class RoomManagement implements Management<Room>, Serializable {
         }
     }
 
+    public boolean booleanCheckRoomById(int id) {
+        for (int i = 0; i < roomList.size(); i++) {
+            if (roomList.get(i).getRoomId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int findRoomByPrice(int price) {
         for (int i = 0; i < roomList.size(); i++) {
             if (roomList.get(i).getPrice() == price) {
@@ -72,13 +81,6 @@ public class RoomManagement implements Management<Room>, Serializable {
             }
         }
         return -1;
-    }
-
-    public void findRoomByPrice2(int price) {
-        int index = findRoomByPrice(price);
-        if (index != -1) {
-            System.out.println(roomList.get(index));
-        }
     }
 
     public void findRoomByPrice3(int price) {
@@ -96,7 +98,6 @@ public class RoomManagement implements Management<Room>, Serializable {
         } else {
             Notifications.alertCantFind();
         }
-
     }
 
     public void checkRoomByStatus(int status) {
@@ -120,10 +121,6 @@ public class RoomManagement implements Management<Room>, Serializable {
         System.out.println("Enter toilets: ");
         int numberOfToiLet = scanner.nextInt();
         return new Room(numberRoom, price, status, numberOfBedRoom, numberOfToiLet);
-    }
-
-    public int size() {
-        return roomList.size();
     }
 }
 

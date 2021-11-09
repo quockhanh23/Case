@@ -7,7 +7,6 @@ import services.Notifications;
 import java.util.Scanner;
 
 public class MainAccount {
-
     public static void account() {
         AccountManagement accountManagement = new AccountManagement();
         accountManagement.add(new Account("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
@@ -43,7 +42,7 @@ public class MainAccount {
             switch (choice) {
                 case 1 -> accountManagement.printList();
                 case 2 -> {
-                    accountManagement.add(creat());
+                    accountManagement.add(accountManagement.create());
                     Notifications.alertSuccess();
                 }
                 case 3 -> MainManagement.showMenu();
@@ -55,18 +54,5 @@ public class MainAccount {
                 default -> Notifications.alertDefaultSwitchCase();
             }
         }
-    }
-
-    public static Account creat() {
-        Scanner scanner = new Scanner(System.in);
-        String useName = FormatCreateAccount.inputClientAccount();
-        String pass = FormatCreateAccount.inputClientPassword();
-        System.out.print("Enter client name: ");
-        String name = scanner.nextLine();
-        String email = FormatCreateAccount.inputEmail();
-        System.out.print("Enter client age: ");
-        int age = scanner.nextInt();
-        String phone = FormatCreateAccount.inputPhoneNumber();
-        return new Account(useName, pass, name, age, phone, email);
     }
 }

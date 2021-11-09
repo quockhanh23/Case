@@ -39,7 +39,12 @@ public class MainRoom {
                 case 3 -> {
                     Notifications.alertEditId();
                     int edit = scanner.nextInt();
-                    roomManagement.edit(edit, roomManagement.create());
+                    boolean check = roomManagement.booleanCheckRoomById(edit);
+                    if (check) {
+                        roomManagement.edit(edit, roomManagement.create());
+                    } else {
+                        System.out.println("This room id does not exist. ");
+                    }
                 }
                 case 4 -> {
                     Notifications.alertChoiceStatus();

@@ -5,6 +5,7 @@ import models.Account;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class AccountManagement implements Management<Account>, Serializable {
     private List<Account> accountList = new ArrayList<>();
@@ -56,15 +57,6 @@ public class AccountManagement implements Management<Account>, Serializable {
         return -1;
     }
 
-    public String findPass(String pass) {
-        for (int i = 0; i < accountList.size(); i++) {
-            if (accountList.get(i).getPassWord().equals(pass)) {
-                return accountList.get(i).getPassWord();
-            }
-        }
-        return null;
-    }
-
     public String findUser(String user) {
         for (int i = 0; i < accountList.size(); i++) {
             if (accountList.get(i).getUseName().equals(user)) {
@@ -90,5 +82,16 @@ public class AccountManagement implements Management<Account>, Serializable {
             System.out.println(account);
 
         }
+    }
+    public static Account create() {
+        Scanner scanner = new Scanner(System.in);
+        String useName = FormatCreateAccount.inputClientAccount();
+        String pass = FormatCreateAccount.inputClientPassword();
+        System.out.print("Enter client name: ");
+        String name = scanner.nextLine();
+        String email = FormatCreateAccount.inputEmail();
+        String phone = FormatCreateAccount.inputPhoneNumber();
+        int age = FormatCreateAccount.inputClientAge();
+        return new Account(useName, pass, name, age, phone, email);
     }
 }

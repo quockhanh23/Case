@@ -44,13 +44,19 @@ public class MainReceipt {
                 case 4:
                     Notifications.alertEditId();
                     int editInForById = scanner.nextInt();
-                    receiptManagement.edit(editInForById, receiptManagement.creat());
-                    try {
-                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
-                        Notifications.alertSuccess();
-                        Notifications.alertSaved();
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    boolean check = receiptManagement.booleanCheckReceiptById(editInForById);
+                    if (check) {
+                        receiptManagement.edit(editInForById, receiptManagement.creat());
+                        try {
+                            FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                            Notifications.alertSuccess();
+                            Notifications.alertSaved();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                     else {
+                        System.out.println("This receipt id does not exist. ");
                     }
                     break;
                 case 5:

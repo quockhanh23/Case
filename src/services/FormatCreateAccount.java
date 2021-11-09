@@ -2,6 +2,7 @@ package services;
 
 import models.Regex;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FormatCreateAccount {
@@ -55,5 +56,20 @@ public class FormatCreateAccount {
             if (invalidEmail) System.out.println("Wrong format of email. ");
         } while (invalidEmail);
         return clientEmail;
+    }
+
+    public static int inputClientAge() {
+        Scanner scanner = new Scanner(System.in);
+        int clientAge;
+        System.out.print("Enter client age: ");
+        clientAge = scanner.nextInt();
+        while (true) {
+            if (clientAge < 18) {
+                System.out.println("under 18 years old");
+                System.out.print("Enter client age: ");
+            } else if (clientAge > 18 && clientAge < 100) {
+                return clientAge;
+            }
+        }
     }
 }

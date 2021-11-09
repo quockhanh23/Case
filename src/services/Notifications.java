@@ -107,7 +107,7 @@ public class Notifications {
     }
 
     public static void alertCantFind() {
-        System.out.println("Can't find");
+        System.out.println("not found id. ");
     }
 
     public static void alertBossAndSelect() {

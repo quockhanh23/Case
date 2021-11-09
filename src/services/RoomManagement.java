@@ -108,18 +108,29 @@ public class RoomManagement implements Management<Room>, Serializable {
         }
     }
 
-    public Room create() {
+    public int booleanCheckRoomById2() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter new ID: ");
-        int numberRoom = scanner.nextInt();
-        System.out.println("Enter price: ");
-        int price = scanner.nextInt();
-        System.out.println("Enter status: ");
-        int status = scanner.nextInt();
-        System.out.println("Enter bedrooms: ");
-        int numberOfBedRoom = scanner.nextInt();
-        System.out.println("Enter toilets: ");
-        int numberOfToiLet = scanner.nextInt();
+        int id;
+        System.out.print("Enter new ID: ");
+        while (true) {
+            id = scanner.nextInt();
+            if (booleanCheckRoomById(id) == false && id > 0) {
+                return id;
+            }
+            System.out.println("ID already exist. ");
+            System.out.print("Enter new ID: ");
+        }
+    }
+
+
+    public Room create() {
+        int numberRoom = booleanCheckRoomById2();
+        int price = FormatCreates.priceRoom();
+        int status = FormatCreates.statusRoom();
+        System.out.print("Bedrooms. ");
+        int numberOfBedRoom = FormatCreates.inputRoomNumbersToiletAndBed();
+        System.out.print("Toilets. ");
+        int numberOfToiLet = FormatCreates.inputRoomNumbersToiletAndBed();
         return new Room(numberRoom, price, status, numberOfBedRoom, numberOfToiLet);
     }
 }

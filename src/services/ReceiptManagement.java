@@ -89,6 +89,19 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         }
         return false;
     }
+    public int booleanCheckReceiptById2() {
+        Scanner scanner = new Scanner(System.in);
+        int id;
+        System.out.println("Enter receipt ID: ");
+        while (true) {
+            id = scanner.nextInt();
+            if (booleanCheckReceiptById(id) == false && id > 0) {
+                return id;
+            }
+            System.out.println("ID already exist. ");
+            System.out.println("Enter receipt ID: ");
+        }
+    }
 
     public Receipt creat() {
         Scanner scanner = new Scanner(System.in);
@@ -100,8 +113,7 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         String checkIn = scanner.nextLine();
         System.out.println("Enter last day: ");
         String checkOut = scanner.nextLine();
-        System.out.println("Enter receipt ID: ");
-        int receiptId = scanner.nextInt();
+        int receiptId = booleanCheckReceiptById2();
         System.out.println("Enter total bill: ");
         double receiptPrice = scanner.nextDouble();
         return new Receipt(receiptId, customerName, staffName, checkIn, checkOut, receiptPrice);

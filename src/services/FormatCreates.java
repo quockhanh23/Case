@@ -5,7 +5,7 @@ import models.Regex;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class FormatCreateAccount {
+public class FormatCreates {
     public static String inputPhoneNumber() {
         Scanner scanner = new Scanner(System.in);
         String clientPhoneNumber;
@@ -62,14 +62,55 @@ public class FormatCreateAccount {
         Scanner scanner = new Scanner(System.in);
         int clientAge;
         System.out.print("Enter client age: ");
-        clientAge = scanner.nextInt();
         while (true) {
+            clientAge = scanner.nextInt();
             if (clientAge < 18) {
-                System.out.println("under 18 years old");
+                System.out.println("Under 18 years old.");
                 System.out.print("Enter client age: ");
             } else if (clientAge > 18 && clientAge < 100) {
                 return clientAge;
             }
         }
     }
+
+    public static int inputRoomNumbersToiletAndBed() {
+        Scanner scanner = new Scanner(System.in);
+        int number;
+        System.out.print("Enter number of room: ");
+        while (true) {
+            number = scanner.nextInt();
+            if (number > 0 && number < 10) {
+                return number;
+            }
+            System.out.println("Number of rooms must be less than 10. ");
+            System.out.print("Enter number of room: ");
+        }
+    }
+    public static int statusRoom() {
+        Scanner scanner = new Scanner(System.in);
+        int status;
+        System.out.print("Enter status: ");
+        while (true) {
+            status = scanner.nextInt();
+            if (status > 0 && status < 4) {
+                return status;
+            }
+            System.out.println("Number of status from 1 to 3. ");
+            System.out.print("Enter status: ");
+        }
+    }
+    public static int priceRoom() {
+        Scanner scanner = new Scanner(System.in);
+        int priceRoom;
+        System.out.print("Enter price: ");
+        while (true) {
+            priceRoom = scanner.nextInt();
+            if (priceRoom >= 100 && priceRoom <= 900) {
+                return priceRoom;
+            }
+            System.out.println("Price from 100 to 900. ");
+            System.out.print("Enter price: ");
+        }
+    }
 }
+

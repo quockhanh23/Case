@@ -85,13 +85,13 @@ public class AccountManagement implements Management<Account>, Serializable {
     }
     public static Account create() {
         Scanner scanner = new Scanner(System.in);
-        String useName = FormatCreateAccount.inputClientAccount();
-        String pass = FormatCreateAccount.inputClientPassword();
+        String useName = FormatCreates.inputClientAccount();
+        String pass = FormatCreates.inputClientPassword();
         System.out.print("Enter client name: ");
         String name = scanner.nextLine();
-        String email = FormatCreateAccount.inputEmail();
-        String phone = FormatCreateAccount.inputPhoneNumber();
-        int age = FormatCreateAccount.inputClientAge();
+        String email = FormatCreates.inputEmail();
+        String phone = FormatCreates.inputPhoneNumber();
+        int age = FormatCreates.inputClientAge();
         return new Account(useName, pass, name, age, phone, email);
     }
 }

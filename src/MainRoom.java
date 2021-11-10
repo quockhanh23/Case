@@ -77,6 +77,8 @@ public class MainRoom {
                     Notifications.alertDeleteId();
                     int deleteId = scanner.nextInt();
                     roomManagement.delete2(deleteId);
+                    FileRoom2.write("fileRoom.csv", roomManagement.getRoomList());
+                    Notifications.alertSaved();
                 }
                 case 10 -> MainMenu.showMenu();
                 case 0 -> {

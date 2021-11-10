@@ -54,8 +54,7 @@ public class MainReceipt {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                    }
-                     else {
+                    } else {
                         System.out.println("This receipt id does not exist. ");
                     }
                     break;
@@ -84,6 +83,13 @@ public class MainReceipt {
                     Notifications.alertDeleteId();
                     int deleteById = scanner.nextInt();
                     receiptManagement.delete2(deleteById);
+                    try {
+                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        Notifications.alertSuccess();
+                        Notifications.alertSaved();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 9:
                     MainMenu.showMenu();

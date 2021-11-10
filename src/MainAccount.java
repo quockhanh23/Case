@@ -22,25 +22,36 @@ public class MainAccount {
     }
 
     public static void login() {
-        System.out.println("Please Login: ");
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter username: ");
-        String user = scanner.nextLine();
-        System.out.println("Enter password: ");
-        String pass = scanner.nextLine();
-        boolean check = clientService.findUserAndPass(user, pass);
-        if (check) {
-            Notifications.alertSuccess();
-            MainMenu.showMenu();
-        } else {
-            System.out.println("Wrong username or password!. ");
-            System.out.println("Please log in again: ");
+        try {
+            System.out.println("Please Login: ");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter username: ");
+            String user = scanner.nextLine();
+            System.out.println("Enter password: ");
+            String pass = scanner.nextLine();
+            boolean check = clientService.findUserAndPass(user, pass);
+            if (check) {
+                Notifications.alertSuccess();
+                MainMenu.showMenu();
+            } else {
+                System.out.println("Wrong username or password!. ");
+                System.out.println("Please log in again: ");
+            }
+        } catch (Exception e) {
+            Notifications.alertTryCatch();
         }
+
     }
 
     public void register() {
-        Account client = AccountManagement.create();
-        clientService.add(client);
+        try {
+            Account client = AccountManagement.create();
+            clientService.add(client);
+        } catch (Exception e) {
+            Notifications.alertTryCatch();
+            Notifications.titleUnderLine();
+            MainLogIn.MainLogIn();
+        }
     }
 
     public void displayAllClient() {
@@ -49,7 +60,6 @@ public class MainAccount {
 
     public static void accountMenu() {
         AccountManagement accountManagement = new AccountManagement();
-
         int choice = -1;
         while (true) {
             Scanner scanner = new Scanner(System.in);

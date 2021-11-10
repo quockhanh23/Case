@@ -1,7 +1,6 @@
 package services;
 
 import models.Account;
-import models.Regex;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.Scanner;
 public class AccountManagement implements Management<Account>, Serializable {
     private List<Account> clients;
     private static AccountManagement instance;
-    public static final String PATH_FILE_CLIENT = "DataClient.csv";
 
     public AccountManagement(List<Account> clients) {
         this.clients = clients;
@@ -19,8 +17,7 @@ public class AccountManagement implements Management<Account>, Serializable {
 
     public AccountManagement() {
         clients = new ArrayList<>();
-        clients.add(new Account("khanh", "khanh", "khanh",1,"khanh", "khanh"));
-
+        clients.add(new Account("khanh", "123", "khánh",1,"0353413219", "khanh@gmail.com"));
     }
 
     public List<Account> getClients() {

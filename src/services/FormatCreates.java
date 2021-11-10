@@ -2,7 +2,6 @@ package services;
 
 import models.Regex;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class FormatCreates {

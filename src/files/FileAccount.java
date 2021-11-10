@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.List;
 
 public class FileAccount {
-    public static void write2(String path, List<Account> list) throws IOException {
+    public static void writeAccount(String path, List<Account> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         String str = "Username,Password,Name,Age,Number phone,Email";
@@ -26,7 +26,7 @@ public class FileAccount {
         fileWriter.close();
     }
 
-    public static List<Account> read2(String patch) throws IOException {
+    public static List<Account> readAccount(String patch) throws IOException {
         AccountManagement accountManagement = new AccountManagement();
         FileReader fileReader = new FileReader(patch);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

@@ -7,10 +7,10 @@ import java.io.*;
 import java.util.List;
 
 public class FileRoom2 {
-    public static void write(String path, List<Room> list) throws IOException {
+    public static void writeRoom(String path, List<Room> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String str = " Id room , Price, Status, Number bed, Number toilet";
+        String str = " Id room,Price,Status,Number bed,Number toilet";
         for (Room room : list) {
             str += "\n";
             str += room.getRoomId() + ",";
@@ -25,7 +25,7 @@ public class FileRoom2 {
         fileWriter.close();
     }
 
-    public static List<Room> read(String patch) throws IOException {
+    public static List<Room> readRoom(String patch) throws IOException {
         RoomManagement roomManagement = new RoomManagement();
         FileReader fileReader = new FileReader(patch);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

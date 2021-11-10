@@ -43,7 +43,7 @@ public class MainAccount {
                 case 2 -> {
                     accountManagement.add(accountManagement.create());
                     try {
-                        FileAccount.write2("account.csv", accountManagement.getAdminList());
+                        FileAccount.writeAccount("account.csv", accountManagement.getAdminList());
                         Notifications.alertSuccess();
                         Notifications.alertSaved();
                     } catch (Exception e) {

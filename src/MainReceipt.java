@@ -28,7 +28,7 @@ public class MainReceipt {
                 case 2:
                     receiptManagement.add(receiptManagement.create());
                     try {
-                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        FileReceipt.write2Receipt("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSuccess();
                         Notifications.alertSaved();
                     } catch (Exception e) {
@@ -48,7 +48,7 @@ public class MainReceipt {
                     if (check) {
                         receiptManagement.edit(editInForById, receiptManagement.create());
                         try {
-                            FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                            FileReceipt.write2Receipt("fileReceipt.csv", receiptManagement.getReceiptList());
                             Notifications.alertSuccess();
                             Notifications.alertSaved();
                         } catch (Exception e) {
@@ -60,7 +60,7 @@ public class MainReceipt {
                     break;
                 case 5:
                     try {
-                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
+                        FileReceipt.write2Receipt("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSuccess();
                         Notifications.alertSaved();
                     } catch (Exception e) {
@@ -69,7 +69,7 @@ public class MainReceipt {
                     break;
                 case 6:
                     try {
-                        FileReceipt.read2("fileReceipt.csv");
+                        FileReceipt.read2Receipt("fileReceipt.csv");
                         Notifications.alertSuccess();
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -84,8 +84,7 @@ public class MainReceipt {
                     int deleteById = scanner.nextInt();
                     receiptManagement.delete2(deleteById);
                     try {
-                        FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
-                        Notifications.alertSuccess();
+                        FileReceipt.write2Receipt("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSaved();
                     } catch (Exception e) {
                         e.printStackTrace();

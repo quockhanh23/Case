@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileRoom {
-    public static void fireWrite(String patch, List<Room> roomList) {
+    public static void writeStreamRoom(String patch, List<Room> roomList) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(patch);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -19,7 +19,7 @@ public class FileRoom {
         }
     }
 
-    public static List<Room> readData(String patch) {
+    public static List<Room> readStreamRoom(String patch) {
         List<Room> roomList = new ArrayList<>();
         try {
             FileInputStream fileInputStream = new FileInputStream(patch);

@@ -65,19 +65,19 @@ public class MainRoom {
                     roomManagement.findRoomByPrice3(price);
                 }
                 case 7 -> {
-                    FileRoom2.write("fileRoom.csv", roomManagement.getRoomList());
+                    FileRoom2.writeRoom("fileRoom.csv", roomManagement.getRoomList());
                     Notifications.alertSuccess();
                     Notifications.alertSaved();
                 }
                 case 8 -> {
-                    FileRoom2.read("fileRoom.csv");
+                    FileRoom2.readRoom("fileRoom.csv");
                     Notifications.alertSuccess();
                 }
                 case 9 -> {
                     Notifications.alertDeleteId();
                     int deleteId = scanner.nextInt();
                     roomManagement.delete2(deleteId);
-                    FileRoom2.write("fileRoom.csv", roomManagement.getRoomList());
+                    FileRoom2.writeRoom("fileRoom.csv", roomManagement.getRoomList());
                     Notifications.alertSaved();
                 }
                 case 10 -> MainMenu.showMenu();

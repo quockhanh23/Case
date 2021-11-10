@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.List;
 
 public class FileReceipt {
-    public static void write2(String path, List<Receipt> list) throws IOException {
+    public static void write2Receipt(String path, List<Receipt> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         String str = "Receipt id,Customer Name,Staff Name,Check in day,Check out day,Total money (USD)";
@@ -25,7 +25,7 @@ public class FileReceipt {
         fileWriter.close();
     }
 
-    public static List<Receipt> read2(String patch) throws IOException {
+    public static List<Receipt> read2Receipt(String patch) throws IOException {
         ReceiptManagement receiptManagement = new ReceiptManagement();
         FileReader fileReader = new FileReader(patch);
         BufferedReader bufferedReader = new BufferedReader(fileReader);

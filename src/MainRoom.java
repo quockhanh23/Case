@@ -78,7 +78,7 @@ public class MainRoom {
                     int deleteId = scanner.nextInt();
                     roomManagement.delete(deleteId);
                 }
-                case 10 -> MainManagement.showMenu();
+                case 10 -> MainMenu.showMenu();
                 case 0 -> {
                     Notifications.alertEnding();
                     Intros.intro3();

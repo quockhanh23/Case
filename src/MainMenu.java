@@ -3,7 +3,7 @@ import services.Notifications;
 
 import java.util.Scanner;
 
-public class MainManagement {
+public class MainMenu {
     public static void showMenu() {
         int choice;
         while (true) {

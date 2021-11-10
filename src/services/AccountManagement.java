@@ -27,6 +27,14 @@ public class AccountManagement implements Management<Account>, Serializable {
         this.accountList = accountList;
     }
 
+    public List<Account> getAccountList() {
+        return accountList;
+    }
+
+    public void setAccountList(List<Account> accountList) {
+        this.accountList = accountList;
+    }
+
     @Override
     public void add(Account account) {
         accountList.add(account);

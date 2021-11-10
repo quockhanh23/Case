@@ -1,8 +1,8 @@
+import files.FileAccount;
 import models.Account;
 import services.AccountManagement;
 import services.Intros;
 import services.Notifications;
-
 import java.util.Scanner;
 
 public class MainAccount {
@@ -19,7 +19,7 @@ public class MainAccount {
         boolean check = accountManagement.findUserAndPass(user, pass);
         if (check) {
             Notifications.alertSuccess();
-            MainManagement.showMenu();
+            MainMenu.showMenu();
         } else {
             System.out.println("Wrong username or password!. ");
             System.out.println("Please log in again: ");
@@ -42,9 +42,15 @@ public class MainAccount {
                 case 1 -> accountManagement.printList();
                 case 2 -> {
                     accountManagement.add(accountManagement.create());
-                    Notifications.alertSuccess();
+                    try {
+                        FileAccount.write2("account.csv", accountManagement.getAdminList());
+                        Notifications.alertSuccess();
+                        Notifications.alertSaved();
+                    } catch (Exception e) {
+                        Notifications.alertTryCatch();
+                    }
                 }
-                case 3 -> MainManagement.showMenu();
+                case 3 -> MainMenu.showMenu();
                 case 0 -> {
                     Notifications.alertEnding();
                     Intros.intro3();

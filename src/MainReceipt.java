@@ -86,7 +86,7 @@ public class MainReceipt {
                     receiptManagement.delete2(deleteById);
                     break;
                 case 9:
-                    MainManagement.showMenu();
+                    MainMenu.showMenu();
                     break;
                 case 0:
                     Notifications.alertEnding();

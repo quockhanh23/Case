@@ -103,7 +103,7 @@ public class ReceiptManagement implements Management<Receipt>, Serializable {
         }
     }
 
-    public Receipt creat() {
+    public Receipt create() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter customer name: ");
         String customerName = scanner.nextLine();

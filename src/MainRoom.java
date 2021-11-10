@@ -13,12 +13,12 @@ public class MainRoom {
         RoomManagement roomManagement = new RoomManagement();
         roomManagement.add(new Room(1, 100, 1, 1, 1));
         roomManagement.add(new Room(2, 100, 1, 1, 1));
-        roomManagement.add(new Room(3, 100, 1, 1, 1));
+        roomManagement.add(new Room(3, 200, 1, 2, 2));
         roomManagement.add(new Room(4, 200, 2, 2, 2));
-        roomManagement.add(new Room(5, 200, 3, 2, 2));
-        roomManagement.add(new Room(6, 200, 3, 2, 2));
-        roomManagement.add(new Room(7, 200, 2, 2, 2));
-        roomManagement.add(new Room(8, 200, 2, 2, 2));
+        roomManagement.add(new Room(5, 300, 3, 2, 2));
+        roomManagement.add(new Room(6, 300, 3, 2, 2));
+        roomManagement.add(new Room(7, 400, 2, 8, 8));
+        roomManagement.add(new Room(8, 400, 2, 8, 8));
         roomManagement.add(new Room(9, 500, 1, 10, 10));
         roomManagement.add(new Room(10, 500, 2, 10, 10));
         int choice = -1;

@@ -65,7 +65,7 @@ public class FormatCreates {
         while (true) {
             clientAge = scanner.nextInt();
             if (clientAge < 18) {
-                System.out.println("Under 18 years old.");
+                System.out.println("Under 18 years old. ");
                 System.out.print("Enter client age: ");
             } else if (clientAge > 18 && clientAge < 100) {
                 return clientAge;
@@ -105,10 +105,10 @@ public class FormatCreates {
         System.out.print("Enter price: ");
         while (true) {
             priceRoom = scanner.nextInt();
-            if (priceRoom >= 100 && priceRoom <= 900) {
+            if (priceRoom >= 100 && priceRoom <= 500) {
                 return priceRoom;
             }
-            System.out.println("Price from 100 to 900. ");
+            System.out.println("Price from 100, 200, 500. ");
             System.out.print("Enter price: ");
         }
     }

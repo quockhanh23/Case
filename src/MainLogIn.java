@@ -29,7 +29,6 @@ public class MainLogIn {
                     default -> Notifications.alertDefaultSwitchCase();
                 }
             } catch (Exception e) {
-                System.err.println("Please choice 1 or 2. ");
                 Notifications.alertTryCatch();
             }
         }

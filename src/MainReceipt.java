@@ -26,7 +26,7 @@ public class MainReceipt {
                     receiptManagement.printList();
                     break;
                 case 2:
-                    receiptManagement.add(receiptManagement.creat());
+                    receiptManagement.add(receiptManagement.create());
                     try {
                         FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                         Notifications.alertSuccess();
@@ -46,7 +46,7 @@ public class MainReceipt {
                     int editInForById = scanner.nextInt();
                     boolean check = receiptManagement.booleanCheckReceiptById(editInForById);
                     if (check) {
-                        receiptManagement.edit(editInForById, receiptManagement.creat());
+                        receiptManagement.edit(editInForById, receiptManagement.create());
                         try {
                             FileReceipt.write2("fileReceipt.csv", receiptManagement.getReceiptList());
                             Notifications.alertSuccess();

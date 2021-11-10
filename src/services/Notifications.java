@@ -9,6 +9,7 @@ public class Notifications {
         System.out.println("1. Login --> (khanh - 123). ");
         System.out.println("2. Register. ");
         System.out.println("0. End program. ");
+        System.out.println("Version 1.18 beta. ");
     }
 
     public static void titleSelectManagement() {
@@ -87,7 +88,7 @@ public class Notifications {
 
     public static void titleReceiptFormat() {
         System.out.println(String.format("%-15s%-25s%-25s%-20s%-20s%-5s",
-                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In/month", "Day Out/month", "Total Money:"));
+                "Receipt Id:", "Customer Name:", "Staff Name:", "Day In/month", "Day Out/month", "Total Money (USD):"));
     }
 
     public static void titleWellCome() {

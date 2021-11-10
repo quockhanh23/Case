@@ -1,3 +1,5 @@
+import services.Notifications;
+
 import java.util.Scanner;
 
 public class QualityRate {
@@ -6,17 +8,13 @@ public class QualityRate {
         int choice;
         while (true) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Choice. ");
+            Notifications.titleUnderLine();
             System.out.println("1. Good service. ");
-            System.out.println("2. Not good. ");
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
                     System.out.println("Thanks for using. ");
-                    MainLogIn.logIn();
-                    break;
-                case 2:
-                    System.out.println("Shut up. ");
+                    MainLogIn.MainLogIn();
                     break;
             }
         }

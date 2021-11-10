@@ -3,20 +3,32 @@ import models.Account;
 import services.AccountManagement;
 import services.Intros;
 import services.Notifications;
+
 import java.util.Scanner;
 
 public class MainAccount {
-    public static void account() {
-        AccountManagement accountManagement = new AccountManagement();
-        accountManagement.add(new Account("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
-        Notifications.titleWellCome();
+    private static AccountManagement clientService;
+
+    public MainAccount() {
+        clientService = AccountManagement.getInstance();
+    }
+
+    public AccountManagement getClientService() {
+        return clientService;
+    }
+
+    public void setClientService(AccountManagement clientService) {
+        this.clientService = clientService;
+    }
+
+    public static void login() {
         System.out.println("Please Login: ");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter username: ");
         String user = scanner.nextLine();
         System.out.println("Enter password: ");
         String pass = scanner.nextLine();
-        boolean check = accountManagement.findUserAndPass(user, pass);
+        boolean check = clientService.findUserAndPass(user, pass);
         if (check) {
             Notifications.alertSuccess();
             MainMenu.showMenu();
@@ -26,9 +38,18 @@ public class MainAccount {
         }
     }
 
+    public void register() {
+        Account client = AccountManagement.create();
+        clientService.add(client);
+    }
+
+    public void displayAllClient() {
+        clientService.printList();
+    }
+
     public static void accountMenu() {
         AccountManagement accountManagement = new AccountManagement();
-        accountManagement.add(new Account("khanh", "123", "khanh", 18, "353413219", "khangaquay1@yahoo.com"));
+
         int choice = -1;
         while (true) {
             Scanner scanner = new Scanner(System.in);
@@ -43,7 +64,7 @@ public class MainAccount {
                 case 2 -> {
                     accountManagement.add(accountManagement.create());
                     try {
-                        FileAccount.writeAccount("account.csv", accountManagement.getAdminList());
+                        FileAccount.writeAccount("account.csv", accountManagement.getClients());
                         Notifications.alertSuccess();
                         Notifications.alertSaved();
                     } catch (Exception e) {
@@ -61,3 +82,5 @@ public class MainAccount {
         }
     }
 }
+
+

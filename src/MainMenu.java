@@ -16,7 +16,7 @@ public class MainMenu {
                     case 1 -> MainAccount.accountMenu();
                     case 2 -> MainRoom.mainRoom();
                     case 3 -> MainReceipt.mainReceipt();
-                    case 4 -> MainLogIn.logIn();
+                    case 4 -> MainLogIn.MainLogIn();
                     case 0 -> {
                         Notifications.alertEnding();
                         Intros.intro3();

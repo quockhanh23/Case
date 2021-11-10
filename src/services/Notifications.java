@@ -10,7 +10,7 @@ public class Notifications {
         System.out.println("2. Register. ");
         System.out.println("3. Service quality rating. ");
         System.out.println("0. End program. ");
-        System.out.println("Version: 1.18c beta. ");
+        System.out.println("Version: 1.21d beta. ");
     }
 
     public static void titleSelectManagement() {

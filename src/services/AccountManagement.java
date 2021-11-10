@@ -9,35 +9,41 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AccountManagement implements Management<Account>, Serializable {
-    private List<Account> accountList = new ArrayList<>();
+    private List<Account> clients;
+    private static AccountManagement instance;
+    public static final String PATH_FILE_CLIENT = "DataClient.csv";
 
-    public AccountManagement(List<Account> accountList) {
-        this.accountList = accountList;
+    public AccountManagement(List<Account> clients) {
+        this.clients = clients;
     }
 
     public AccountManagement() {
-        accountList = new ArrayList<>();
+        clients = new ArrayList<>();
+        clients.add(new Account("khanh", "khanh", "khanh",1,"khanh", "khanh"));
+
     }
 
-    public List<Account> getAdminList() {
-        return accountList;
+    public List<Account> getClients() {
+        return clients;
     }
 
-    public void setAdminList(List<Account> accountList) {
-        this.accountList = accountList;
+    public void setClients(List<Account> clients) {
+        this.clients = clients;
     }
 
-    public List<Account> getAccountList() {
-        return accountList;
+    public static AccountManagement getInstance() {
+        if (instance == null) instance = new AccountManagement();
+        return instance;
+
     }
 
-    public void setAccountList(List<Account> accountList) {
-        this.accountList = accountList;
+    public static void setInstance(AccountManagement instance) {
+        AccountManagement.instance = instance;
     }
 
     @Override
     public void add(Account account) {
-        accountList.add(account);
+        clients.add(account);
 
     }
 
@@ -57,8 +63,8 @@ public class AccountManagement implements Management<Account>, Serializable {
     }
 
     public int findUserAndPass2(String user, String pass) {
-        for (int i = 0; i < accountList.size(); i++) {
-            if (accountList.get(i).getUseName().equals(user) && accountList.get(i).getPassWord().equals(pass)) {
+        for (int i = 0; i < clients.size(); i++) {
+            if (clients.get(i).getUseName().equals(user) && clients.get(i).getPassWord().equals(pass)) {
 
                 return i;
             }
@@ -67,8 +73,8 @@ public class AccountManagement implements Management<Account>, Serializable {
     }
 
     public boolean checkCreate(String user) {
-        for (int i = 0; i < accountList.size(); i++) {
-            if (accountList.get(i).getUseName().equals(user)) {
+        for (int i = 0; i < clients.size(); i++) {
+            if (clients.get(i).getUseName().equals(user)) {
                 return true;
             }
         }
@@ -90,8 +96,8 @@ public class AccountManagement implements Management<Account>, Serializable {
     }
 
     public boolean findUserAndPass(String user, String pass) {
-        for (int i = 0; i < accountList.size(); i++) {
-            if (accountList.get(i).getUseName().equals(user) && accountList.get(i).getPassWord().equals(pass)) {
+        for (int i = 0; i < clients.size(); i++) {
+            if (clients.get(i).getUseName().equals(user) && clients.get(i).getPassWord().equals(pass)) {
                 return true;
             }
         }
@@ -101,9 +107,22 @@ public class AccountManagement implements Management<Account>, Serializable {
     @Override
     public void printList() {
         Notifications.titleAdminFormat();
-        for (Account account : accountList) {
+        for (Account account : clients) {
             System.out.println(account);
 
+        }
+    }
+    public Account findByUsername(String username) {
+        int index = -1;
+        for (int i = 0; i < clients.size(); i++) {
+            if (clients.get(i).getUseName().equals(username)) {
+                index = i;
+            }
+        }
+        if (index == -1) {
+            return null;
+        } else {
+            return clients.get(index);
         }
     }
 

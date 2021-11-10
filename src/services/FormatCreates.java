@@ -86,6 +86,7 @@ public class FormatCreates {
             System.out.print("Enter number of room: ");
         }
     }
+
     public static int statusRoom() {
         Scanner scanner = new Scanner(System.in);
         int status;
@@ -99,6 +100,7 @@ public class FormatCreates {
             System.out.print("Enter status: ");
         }
     }
+
     public static int priceRoom() {
         Scanner scanner = new Scanner(System.in);
         int priceRoom;
@@ -110,6 +112,20 @@ public class FormatCreates {
             }
             System.out.println("Price from 100, 200, 500. ");
             System.out.print("Enter price: ");
+        }
+    }
+
+    public static double totalMoney() {
+        Scanner scanner = new Scanner(System.in);
+        double totalMoney;
+        System.out.print("Enter total money bill: ");
+        while (true) {
+            totalMoney = scanner.nextInt();
+            if (totalMoney > 0) {
+                return totalMoney;
+            }
+            System.out.println("Money not less than 0. ");
+            System.out.print("Enter total money bill: ");
         }
     }
 }

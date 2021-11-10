@@ -1,6 +1,7 @@
 package services;
 
 import models.Account;
+import models.Regex;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -57,13 +58,27 @@ public class AccountManagement implements Management<Account>, Serializable {
         return -1;
     }
 
-    public String findUser(String user) {
+    public boolean checkCreate(String user) {
         for (int i = 0; i < accountList.size(); i++) {
             if (accountList.get(i).getUseName().equals(user)) {
-                return accountList.get(i).getUseName();
+                return true;
             }
         }
-        return null;
+        return false;
+    }
+
+    public String booleanCheckCreate() {
+        Scanner scanner = new Scanner(System.in);
+        String user;
+        while (true) {
+            System.out.println("Enter username: ");
+            user = scanner.nextLine();
+            if (checkCreate(user) == false) {
+                return user;
+            }
+            System.out.println("This username already exist. ");
+            System.out.println("Enter username: ");
+        }
     }
 
     public boolean findUserAndPass(String user, String pass) {
@@ -83,7 +98,9 @@ public class AccountManagement implements Management<Account>, Serializable {
 
         }
     }
+
     public static Account create() {
+        int age = FormatCreates.inputClientAge();
         Scanner scanner = new Scanner(System.in);
         String useName = FormatCreates.inputClientAccount();
         String pass = FormatCreates.inputClientPassword();
@@ -91,7 +108,6 @@ public class AccountManagement implements Management<Account>, Serializable {
         String name = scanner.nextLine();
         String email = FormatCreates.inputEmail();
         String phone = FormatCreates.inputPhoneNumber();
-        int age = FormatCreates.inputClientAge();
         return new Account(useName, pass, name, age, phone, email);
     }
 }

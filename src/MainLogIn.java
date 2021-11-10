@@ -19,6 +19,7 @@ public class MainLogIn {
                     case 2 -> {
                         AccountManagement.create();
                         Notifications.alertSuccess();
+                        System.out.println("Waiting for activation 2 days. ");
                         MainManagement.showMenu();
                     }
                     case 0 -> {

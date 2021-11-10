@@ -121,6 +121,15 @@ public class RoomManagement implements Management<Room>, Serializable {
             System.out.print("Enter new ID: ");
         }
     }
+    public void delete2(int id) {
+        int index = findIndexById(id);
+        if (index != -1) {
+            roomList.remove(index);
+            Notifications.alertSuccess();
+        } else {
+            Notifications.alertCantFind();
+        }
+    }
 
     public Room create() {
         int numberRoom = booleanCheckRoomById2();

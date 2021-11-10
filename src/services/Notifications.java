@@ -109,7 +109,7 @@ public class Notifications {
     }
 
     public static void alertCantFind() {
-        System.out.println("not found. ");
+        System.out.println("Not found. ");
     }
 
     public static void alertBossAndSelect() {
@@ -137,6 +137,6 @@ public class Notifications {
     }
 
     public static void alertSaved() {
-        System.out.println("Receipt saved. ");
+        System.out.println("Saved. ");
     }
 }

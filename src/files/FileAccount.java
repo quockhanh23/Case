@@ -11,7 +11,7 @@ public class FileAccount {
     public static void write2(String path, List<Account> list) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        String str = "Username, pass,name, age, phone, email";
+        String str = "Username,Password,Name,Age,Number phone,Email";
         for (Account account : list) {
             str += "\n";
             str += account.getUseName() + ",";

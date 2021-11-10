@@ -8,8 +8,9 @@ public class Notifications {
         System.out.println("Select number 2, if your don't have account: ");
         System.out.println("1. Login --> (khanh - 123). ");
         System.out.println("2. Register. ");
+        System.out.println("3. Service quality rating. ");
         System.out.println("0. End program. ");
-        System.out.println("Version 1.18 beta. ");
+        System.out.println("Version: 1.18c beta. ");
     }
 
     public static void titleSelectManagement() {
@@ -108,7 +109,7 @@ public class Notifications {
     }
 
     public static void alertCantFind() {
-        System.out.println("not found id. ");
+        System.out.println("not found. ");
     }
 
     public static void alertBossAndSelect() {

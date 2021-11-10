@@ -122,7 +122,6 @@ public class RoomManagement implements Management<Room>, Serializable {
         }
     }
 
-
     public Room create() {
         int numberRoom = booleanCheckRoomById2();
         int price = FormatCreates.priceRoom();

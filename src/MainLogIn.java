@@ -22,6 +22,8 @@ public class MainLogIn {
                         System.out.println("Waiting for activation 2 days. ");
                         MainManagement.showMenu();
                     }
+                    case 3 -> QualityRate.service();
+
                     case 0 -> {
                         Notifications.alertEnding();
                         Intros.intro3();
